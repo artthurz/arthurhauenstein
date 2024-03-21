@@ -2,6 +2,7 @@
 
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
+import AOSInit from "@/lib/aos-init";
 import React from "react";
 
 export default function Providers({
@@ -18,6 +19,7 @@ export default function Providers({
     >
       {children}
       <Toaster richColors />
+      <AOSInit />
     </ThemeProvider>
   );
 }

@@ -1,5 +1,8 @@
 {
-  "AboutMe": {
-    "Title": "Bem-vindo ao meu portifólio, acompanhe minha tragetória até aqui."
+  "root": {
+    "welcome": {
+      "title": "Bem-vindo ao meu portifólio, acompanhe minha tragetória até aqui."
+    },
+    "skills": {}
   }
 }

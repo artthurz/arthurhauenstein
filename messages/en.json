@@ -1,5 +1,8 @@
 {
-  "AboutMe": {
-    "Title": "Welcome to my portfolio, follow my trajectory so far."
+  "root": {
+    "welcome": {
+      "title": "Welcome to my portfolio, follow my trajectory so far."
+    },
+    "skills": {}
   }
 }

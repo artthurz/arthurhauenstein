@@ -1,5 +1,8 @@
 {
-  "AboutMe": {
-    "Title": "Bienvenido a mi portafolio, sigue mi trayectoria hasta ahora."
+  "root": {
+    "welcome": {
+      "title": "Bienvenido a mi portafolio, sigue mi trayectoria hasta ahora."
+    },
+    "skills": {}
   }
 }
