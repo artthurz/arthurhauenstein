@@ -17,9 +17,9 @@ export default function Providers({
       defaultTheme="system"
       disableTransitionOnChange
     >
-      {children}
-      <Toaster richColors />
       <AOSInit />
+      <Toaster richColors />
+      {children}
     </ThemeProvider>
   );
 }

@@ -1,9 +1,10 @@
+import { Footer } from "@/components/footer";
+import { Header } from "@/components/header";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import React from "react";
 import "./globals.css";
 import Providers from "./providers";
-import AOSInit from "@/lib/aos-init";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -50,7 +51,13 @@ export default function RootLayout({
   return (
     <html lang={locale}>
       <body className={inter.className}>
-        <Providers>{children}</Providers>
+        <Providers>
+          {/* @ts-expect-error Server Component */}
+          <Header />
+          {children}
+          {/* @ts-expect-error Server Component */}
+          <Footer />
+        </Providers>
       </body>
     </html>
   );
