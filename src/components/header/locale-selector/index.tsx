@@ -1,17 +1,9 @@
 "use client";
 
-import Image from "next/image";
-import React from "react";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { useRouter, TLocales, localeLabel } from "@/navigation";
-import { useLocale } from "next-intl";
-import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { TLocales, localeLabel, useRouter } from "@/navigation";
+import { useLocale } from "next-intl";
+import Image from "next/image";
 
 type LocaleSelctorProps = {
   className?: string;
@@ -26,8 +18,12 @@ export function LocaleSelector({ className }: LocaleSelctorProps) {
   }
 
   return (
-    <DropdownMenu>
-      <DropdownMenuTrigger className={className}>
+    <div className="dropdown dropdown-end">
+      <div
+        tabIndex={0}
+        role="button"
+        className={cn("btn btn-ghost", className)}
+      >
         <Image
           className="w-5 h-5"
           src={`/images/locale/${locale}.svg`}
@@ -35,58 +31,66 @@ export function LocaleSelector({ className }: LocaleSelctorProps) {
           width={24}
           height={24}
         />
-      </DropdownMenuTrigger>
-
-      <DropdownMenuContent className="absolute z-50 right-0 top-full">
-        <DropdownMenuItem
+      </div>
+      <ul
+        tabIndex={0}
+        className="dropdown-content z-[1] menu p-2 shadow bg-base-200 rounded-box w-52"
+      >
+        <li
           className={cn(
             "gap-2 cursor-pointer",
-            locale === "en" ? "text-sky-500" : ""
+            locale === "en" ? "text-accent" : ""
           )}
           onClick={() => handleChangeLocale("en")}
         >
-          <Image
-            className="w-5 h-5 mr-2"
-            src="/images/locale/en.svg"
-            alt="Locale"
-            width={24}
-            height={24}
-          />
-          {localeLabel["en"]}
-        </DropdownMenuItem>
-        <DropdownMenuItem
+          <a>
+            <Image
+              className="w-5 h-5 mr-2"
+              src="/images/locale/en.svg"
+              alt="Locale"
+              width={24}
+              height={24}
+            />
+            {localeLabel["en"]}
+          </a>
+        </li>
+        <li
           className={cn(
             "gap-2 cursor-pointer",
-            locale === "pt" ? "text-sky-500" : ""
+            locale === "pt" ? "text-accent" : ""
           )}
           onClick={() => handleChangeLocale("pt")}
         >
-          <Image
-            className="w-5 h-5 mr-2"
-            src="/images/locale/pt.svg"
-            alt="Locale"
-            width={24}
-            height={24}
-          />
-          {localeLabel["pt"]}
-        </DropdownMenuItem>
-        <DropdownMenuItem
+          <a>
+            <Image
+              className="w-5 h-5 mr-2"
+              src="/images/locale/pt.svg"
+              alt="Locale"
+              width={24}
+              height={24}
+            />
+            {localeLabel["pt"]}
+          </a>
+        </li>
+        <li
           className={cn(
             "gap-2 cursor-pointer",
-            locale === "es" ? "text-sky-500" : ""
+            locale === "es" ? "text-accent" : ""
           )}
           onClick={() => handleChangeLocale("es")}
         >
-          <Image
-            className="w-5 h-5 mr-2"
-            src="/images/locale/es.svg"
-            alt="Locale"
-            width={24}
-            height={24}
-          />
-          {localeLabel["es"]}
-        </DropdownMenuItem>
-      </DropdownMenuContent>
-    </DropdownMenu>
+          <a>
+            <Image
+              className="w-5 h-5 mr-2"
+              src="/images/locale/es.svg"
+              alt="Locale"
+              width={24}
+              height={24}
+            />
+            {localeLabel["es"]}
+          </a>
+        </li>
+      </ul>
+    </div>
   );
 }

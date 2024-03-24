@@ -15,7 +15,7 @@ export async function Header() {
         <Nav />
         <div className="flex items-center gap-2 md:gap-4 md:border-l md:border-slate-200 ml-6 pl-6 md:dark:border-slate-800">
           <ThemeSelector />
-          <LocaleSelector className="hidden md:block" />
+          <LocaleSelector className="hidden md:flex" />
           <Menu />
         </div>
       </div>

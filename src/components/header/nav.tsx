@@ -7,34 +7,22 @@ export async function Nav() {
     <nav>
       <ul className="hidden md:flex items-center gap-x-8">
         <li>
-          <Link
-            className="hover:text-sky-500 dark:hover:text-sky-400"
-            href="#skills"
-          >
+          <Link className="hover:text-accent" href="#skills">
             Competências
           </Link>
         </li>
         <li>
-          <Link
-            className="hover:text-sky-500 dark:hover:text-sky-400"
-            href="#academic"
-          >
+          <Link className="hover:text-accent" href="#academic">
             Formação
           </Link>
         </li>
         <li>
-          <Link
-            className="hover:text-sky-500 dark:hover:text-sky-400"
-            href="#courses"
-          >
+          <Link className="hover:text-accent" href="#courses">
             Cursos
           </Link>
         </li>
         <li>
-          <Link
-            className="hover:text-sky-500 dark:hover:text-sky-400"
-            href="#contact"
-          >
+          <Link className="hover:text-accent" href="#contact">
             Contato
           </Link>
         </li>

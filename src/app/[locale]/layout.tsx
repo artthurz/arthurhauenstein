@@ -5,6 +5,7 @@ import { Inter } from "next/font/google";
 import React from "react";
 import "./globals.css";
 import Providers from "./providers";
+import { cn } from "@/lib/utils";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -50,7 +51,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang={locale}>
-      <body className={inter.className}>
+      <body className={cn(inter.className, "bg-slate-50 dark:bg-[#0B1120]")}>
         <Providers>
           {/* @ts-expect-error Server Component */}
           <Header />

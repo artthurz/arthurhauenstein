@@ -2,6 +2,7 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 import React from "react";
 import { Highlight } from "./highlight";
+import { Code, Microscope, TestTubeDiagonal } from "lucide-react";
 
 export function WelcomeSection() {
   const t = useTranslations("root.welcome");
@@ -13,30 +14,25 @@ export function WelcomeSection() {
       </div>
       <div className="relative max-w-6xl mx-auto pt-32 sm:pt-36 lg:pt-48 px-4 sm:px-6 md:px-8 ">
         <h1
-          className="text-slate-900 font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight text-center dark:text-white"
+          className="text-primary font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight text-center"
           data-aos="zoom-in"
         >
           {t("title")}
         </h1>
         <p
-          className="mt-6 text-lg text-slate-600 text-center max-w-3xl mx-auto dark:text-slate-400 text-primary"
+          className="mt-6 text-lg text-slate-600 text-center max-w-3xl mx-auto dark:text-slate-400"
           data-aos="fade-up"
           data-aos-easing="ease"
           data-aos-delay="500"
         >
           Construo aplicações focadas na{" "}
-          <span className="text-sky-500 dark:text-sky-400">
-            experiência do usuário
-          </span>{" "}
-          e no <span className="text-sky-500 dark:text-sky-400">desgin</span>,
-          proporcionando{" "}
-          <span className="text-sky-500 dark:text-sky-400">
-            experiências únicas
-          </span>{" "}
-          para as pessoas. Apenas fazer bem feito não é mais o suficiente.
+          <span className="text-accent">experiência do usuário</span> e no{" "}
+          <span className="text-accent">desgin</span>, proporcionando{" "}
+          <span className="text-accent">experiências únicas</span> para as
+          pessoas. Apenas fazer bem feito não é mais o suficiente.
         </p>
 
-        <figure className="md:flex rounded-x p-8 md:p-0 mt-24 md:mt-32 text-center shadow-xl text-slate-900 dark:text-slate-300 bg-card/50 dark:bg-card/70 ring-1 ring-slate-900/5 dark:shadow-white/5 dark:ring-0">
+        <figure className="md:flex rounded-x p-8 md:p-0 mt-24 md:mt-32 text-center shadow-xl text-slate-900 dark:text-slate-300 bg-base-200/50 dark:bg-base-200/70 ring-1 ring-slate-900/5 dark:shadow-white/5 dark:ring-0">
           <Image
             className="w-36 h-36 md:w-48 md:h-auto object-cover md:object-contain rounded-full md:rounded mx-auto"
             src="/images/me.jpg"
@@ -53,9 +49,7 @@ export function WelcomeSection() {
               </p>
             </blockquote>
             <figcaption className="font-medium">
-              <div className="text-sky-500 dark:text-sky-400">
-                Arthur Hauenstein
-              </div>
+              <div className="text-accent">Arthur Hauenstein</div>
               <div className="text-slate-700 dark:text-slate-500">
                 Engenheiro de Software
               </div>
@@ -64,13 +58,46 @@ export function WelcomeSection() {
         </figure>
 
         <div className="flex justify-center mt-24 md:mt-72">
-          <div className="flex gap-6 flex-col md:flex-row">
-            {/* @ts-expect-error Server Component */}
-            <Highlight amount="+8" type="anos de experiência" />
-            {/* @ts-expect-error Server Component */}
-            <Highlight amount="7" type="cursos concluídos" />
-            {/* @ts-expect-error Server Component */}
-            <Highlight amount="+20" type="projetos desenvolvidos" />
+          <div className="stats stats-vertical md:stats-horizontal bg-base-200 shadow">
+            <div className="stat">
+              <div className="stat-figure text-secondary">
+                <TestTubeDiagonal className="w-8 h-8 stroke-accent" />
+              </div>
+              <div className="stat-title text-primary">
+                Projetos desenvolvidos
+              </div>
+              <div className="stat-value text-accent">+30</div>
+              <div className="stat-desc">↗︎ + a cada mês</div>
+            </div>
+
+            <div className="stat">
+              <div className="stat-figure text-secondary">
+                <Microscope className="w-8 h-8 stroke-secondary" />
+              </div>
+              <div className="stat-title text-primary">Cursos concluídos</div>
+              <div className="stat-value text-secondary">7</div>
+              <div className="stat-desc">↗︎ sempre me aperfeiçoando</div>
+            </div>
+
+            <div className="stat">
+              <div className="stat-figure text-secondary">
+                <div className="avatar online">
+                  <div className="w-16 rounded-full">
+                    <Image
+                      alt="me"
+                      width={64}
+                      height={64}
+                      src="/images/me-secondary.jpg"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="stat-value text-primary">+8</div>
+              <div className="stat-title">Anos de exeriência</div>
+              <div className="stat-desc text-accent">
+                ↗︎ evoluindo todos os dias
+              </div>
+            </div>
           </div>
         </div>
       </div>

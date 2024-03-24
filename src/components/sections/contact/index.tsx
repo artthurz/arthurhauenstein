@@ -39,7 +39,7 @@ export function ContactSection() {
         <h2 className="mt-8 font-semibold text-blue-500 dark:text-blue-400">
           Entre em contato
         </h2>
-        <p className="mt-4 text-3xl sm:text-4xl text-slate-900 font-extrabold tracking-tight dark:text-slate-50 ">
+        <p className="mt-4 text-3xl sm:text-4xl text-primary font-extrabold tracking-tight">
           Precisando de um desenvolvedor? Vamos trabalhar juntos.
         </p>
         <p className="mt-4 max-w-3xl space-y-6">

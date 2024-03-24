@@ -1,15 +1,7 @@
 "use client";
-
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 import { useTheme } from "next-themes";
 import React from "react";
 import { DarkIcon, LightIcon, SystemIcon } from "./icons";
-import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 export function ThemeSelector() {
@@ -25,50 +17,59 @@ export function ThemeSelector() {
   }
 
   return (
-    <DropdownMenu>
-      <DropdownMenuTrigger>
+    <div className="dropdown dropdown-end">
+      <div tabIndex={0} role="button" className="btn btn-ghost">
         <span className="dark:hidden">
           <LightIcon isActive={theme === "light"} />
         </span>
         <span className="hidden dark:inline">
           <DarkIcon isActive={theme === "dark"} />
         </span>
-      </DropdownMenuTrigger>
+      </div>
 
-      <DropdownMenuContent className="absolute z-50 right-0 top-full">
-        <DropdownMenuItem
+      <ul
+        tabIndex={0}
+        className="dropdown-content z-[1] menu p-2 shadow bg-base-200 rounded-box w-52"
+      >
+        <li
           className={cn(
-            "gap-2 cursor-pointer",
-            theme === "light" ? "text-sky-500" : ""
+            "gap-2 flex cursor-pointer",
+            theme === "light" ? "text-accent" : ""
           )}
           onClick={() => {
             setTheme("light");
           }}
         >
-          <LightIcon isActive={theme === "light"} />
-          Light
-        </DropdownMenuItem>
-        <DropdownMenuItem
+          <a>
+            <LightIcon isActive={theme === "light"} />
+            Light
+          </a>
+        </li>
+        <li
           className={cn(
-            "gap-2 cursor-pointer",
-            theme === "dark" ? "text-sky-500" : ""
+            "gap-2 flex cursor-pointer",
+            theme === "dark" ? "text-accent" : ""
           )}
           onClick={() => setTheme("dark")}
         >
-          <DarkIcon isActive={theme === "dark"} />
-          Dark
-        </DropdownMenuItem>
-        <DropdownMenuItem
+          <a>
+            <DarkIcon isActive={theme === "dark"} />
+            Dark
+          </a>
+        </li>
+        <li
           className={cn(
-            "gap-2 cursor-pointer",
-            theme === "system" ? "text-sky-500" : ""
+            "gap-2 flex cursor-pointer",
+            theme === "system" ? "text-accent" : ""
           )}
           onClick={() => setTheme("system")}
         >
-          <SystemIcon isActive={theme === "system"} />
-          System
-        </DropdownMenuItem>
-      </DropdownMenuContent>
-    </DropdownMenu>
+          <a>
+            <SystemIcon isActive={theme === "system"} />
+            System
+          </a>
+        </li>
+      </ul>
+    </div>
   );
 }

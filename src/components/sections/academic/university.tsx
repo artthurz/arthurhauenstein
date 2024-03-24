@@ -110,7 +110,7 @@ export async function University() {
       >
         <Link
           type="button"
-          className="flex gap-2 w-fit duration-200 bg-indigo-600 hover:bg-indigo-500 text-white justify-center items-center text-sm leading-6 font-medium py-2 px-3 rounded-lg"
+          className="btn bg-indigo-600 hover:bg-indigo-500 text-white"
           href="https://www.univates.br/"
           target="_blank"
           rel="noreferrer"
