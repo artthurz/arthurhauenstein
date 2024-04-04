@@ -8,6 +8,7 @@ const config = {
         light: {
           ...require("daisyui/src/theming/themes")["light"],
           primary: "#0F172A",
+          tertiary: "#1F2937",
           accent: "#0EA5E9",
           "base-100": "#ffffff",
           "base-200": "#ffffff",
@@ -15,6 +16,7 @@ const config = {
         dark: {
           ...require("daisyui/src/theming/themes")["dark"],
           primary: "#ffffff",
+          tertiary: "#94a3b8",
           accent: "#38BDF8",
           "base-100": "#0F172A",
           "base-200": "#1E293B",
@@ -38,6 +40,25 @@ const config = {
       },
     },
     extend: {},
+    backgroundImage: {
+      "grid-slate-400": "url('/images/grid-background/bg-grid-slate-400.svg')",
+      "grid-slate-900": "url('/images/grid-background/bg-grid-slate-900.svg')",
+      "beams-blue-dark": "url('/images/beams-background/beams-blue-dark.png')",
+      "beams-blue-light":
+        "url('/images/beams-background/beams-blue-light.jpg')",
+      "beams-indigo-dark":
+        "url('/images/beams-background/beams-indigo-dark.png')",
+      "beams-indigo-light":
+        "url('/images/beams-background/beams-indigo-light.jpg')",
+      "beams-pink-dark": "url('/images/beams-background/beams-pink-dark.png')",
+      "beams-pink-light":
+        "url('/images/beams-background/beams-pink-light.jpg')",
+      "beams-sky-dark": "url('/images/beams-background/beams-sky-dark.png')",
+      "beams-sky-light": "url('/images/beams-background/beams-sky-light.jpg')",
+      "beams-dark": "url('/images/beams-background/beams-dark.jpg')",
+      "beams-light": "url('/images/beams-background/beams-light.png')",
+      overlay: "url('/images/beams-background/overlay.webp')",
+    },
   },
   plugins: [require("tailwindcss-animate"), require("daisyui")],
 } satisfies Config;

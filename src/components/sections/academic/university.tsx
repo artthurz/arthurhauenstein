@@ -1,6 +1,6 @@
 "use server";
 
-import { ChevronRight } from "lucide-react";
+import { ChevronRight, Star } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -58,21 +58,8 @@ export async function University() {
       >
         <dt className="sr-only">Reviews</dt>
         <dd className="text-indigo-600 flex items-center dark:text-indigo-400">
-          <svg
-            width="24"
-            height="24"
-            fill="none"
-            aria-hidden="true"
-            className="mr-1 stroke-current dark:stroke-indigo-500"
-          >
-            <path
-              d="m12 5 2 5h5l-4 4 2.103 5L12 16l-5.103 3L9 14l-4-4h5l2-5Z"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            ></path>
-          </svg>
-          <span>
+          <Star className="h-4 w-4 mr-1 text-indigo-400" />
+          <span className="font-bold">
             4 <span className="text-slate-400 font-normal">(Nota MEC)</span>
           </span>
         </dd>
@@ -120,7 +107,7 @@ export async function University() {
         </Link>
       </div>
       <p
-        className="mt-4 text-sm leading-6 col-start-1 sm:col-span-2 lg:mt-6 lg:row-start-4 lg:col-span-1 dark:text-slate-400"
+        className="mt-4 text-sm leading-6 col-start-1 sm:col-span-2 lg:mt-6 lg:row-start-4 lg:col-span-1 text-tertiary"
         data-aos="zoom-in"
       >
         Fundada em <b>1969</b> a Universidade do Vale do Taquari é{" "}

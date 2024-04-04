@@ -5,22 +5,24 @@ import { MoreVerticalIcon, X } from "lucide-react";
 import React from "react";
 import { LocaleSelector } from "./locale-selector";
 import { createPortal } from "react-dom";
+import { useMounted } from "@/hooks/use-mounted";
 
 export function Menu() {
   const dialogRef = React.useRef<HTMLDialogElement>(null);
-
+  const mounted = useMounted();
   const isDesktop = useMediaQuery("(min-width: 768px)");
-  if (isDesktop) {
+
+  if (isDesktop || !mounted) {
     return <React.Fragment />;
   }
 
   return (
-    <>
+    <React.Fragment>
       <button
         onClick={() => dialogRef.current?.showModal()}
         className="btn btn-ghost"
       >
-        <MoreVerticalIcon className="text-slate-500 w-6 h-6 flex items-center justify-center hover:text-slate-600 dark:text-slate-400 dark:hover:text-slate-300" />
+        <MoreVerticalIcon className="text-tertiary w-6 h-6 flex items-center justify-center hover:text-slate-600 dark:hover:text-slate-300" />
       </button>
       {createPortal(
         <dialog
@@ -87,6 +89,6 @@ export function Menu() {
         </dialog>,
         document.body
       )}
-    </>
+    </React.Fragment>
   );
 }

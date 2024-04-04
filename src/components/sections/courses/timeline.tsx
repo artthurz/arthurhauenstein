@@ -2,6 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import { CalendarCheck, ExternalLink } from "lucide-react";
+import Link from "next/link";
 import React from "react";
 
 interface LineProps {
@@ -10,13 +11,15 @@ interface LineProps {
 
 export async function Line(props: LineProps) {
   return (
-    <ol className="relative border-s border-gray-200 dark:border-gray-700 last:mb-0">
+    <ul className="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
       {props.children}
-    </ol>
+    </ul>
   );
 }
 
 interface MarkProps {
+  lastIndex: number;
+  index: number;
   name: string;
   institution: string;
   date: string;
@@ -25,19 +28,20 @@ interface MarkProps {
   children?: React.ReactNode;
   background: string;
   textColor: string;
+  fillColor: string;
 }
 
-export async function Mark(props: MarkProps) {
+export async function MarkOld(props: MarkProps) {
   return (
-    <li className="mb-10 ms-6" data-aos="zoom-in-right">
-      <span
+    <li data-aos="zoom-in-right">
+      <div
         className={cn(
-          `absolute flex items-center justify-center w-6 h-6  rounded-full -start-3 ring-8 ring-white dark:ring-gray-900`,
+          `timeline-middle w-6 h-6 rounded-full ring-8 ring-white dark:ring-gray-900`,
           props.background
         )}
       >
         <CalendarCheck className={cn("h-4 w-4", props.textColor)} />
-      </span>
+      </div>
       <h3 className="my-6 mx-2 flex justify-between sm:justify-normal items-center mb-1 text-lg font-semibold text-gray-900 dark:text-white">
         {props.name}
         <div
@@ -60,6 +64,69 @@ export async function Mark(props: MarkProps) {
       <p className="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
         {props.description}
       </p>
+    </li>
+  );
+}
+
+export async function Mark(props: MarkProps) {
+  return (
+    <li>
+      <hr
+        className={cn(
+          "bg-slate-600 dark:bg-slate-400",
+          props.index === 0 ? "hidden" : "block"
+        )}
+      />
+      <div className="timeline-middle">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 20 20"
+          className={cn(
+            "h-6 w-6 rounded-full",
+            props.fillColor,
+            props.background
+          )}
+        >
+          <path
+            fillRule="evenodd"
+            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+            clipRule="evenodd"
+          />
+        </svg>
+      </div>
+      <div
+        className={cn(
+          "mb-10 timeline-start",
+          props.index % 2 === 0 ? "md:text-end" : "md:timeline-end"
+        )}
+      >
+        <time className="font-mono italic">{props.date}</time>
+        <div
+          className={cn(
+            "flex items-center gap-2 text-lg font-black text-primary",
+            props.index % 2 === 0 ? "md:flex-row-reverse" : ""
+          )}
+        >
+          {props.name} - {props.institution}
+          <div className="tooltip" data-tip="Acessar site">
+            <Link
+              className="btn btn-circle btn-ghost"
+              href={props.link}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <ExternalLink className={cn("h-5 w-5", props.textColor)} />
+            </Link>
+          </div>
+        </div>
+        {props.description}
+      </div>
+      <hr
+        className={cn(
+          "bg-slate-600 dark:bg-slate-400",
+          props.index === props.lastIndex ? "hidden" : "block"
+        )}
+      />
     </li>
   );
 }
