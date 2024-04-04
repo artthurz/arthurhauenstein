@@ -86,7 +86,7 @@ export async function Footer() {
             <Link
               className="btn btn-ghost btn-circle hover:bg-gray-500 dark:hover:bg-gray-800 bg-gray-700 text-white"
               target="_blank"
-              href="mailto:hauenstein.contact@gmail.com"
+              href="https://github.com/artthurz"
             >
               <svg
                 className="w-8 h-8 fill-current"
