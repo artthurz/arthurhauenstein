@@ -13,20 +13,20 @@ export function WelcomeSection() {
         <div className="min-h-[70rem] absolute inset-0 bg-gridSlate900 bg-[bottom_1px_center] dark:bg-grid-slate-400 dark:bg-bottom dark:border-b dark:border-slate-100/5 [mask-image:linear-gradient(transparent,black)] [webkit-mask-image:linear-gradient(transparent,black)]" />
       </div>
       <div className="relative max-w-6xl mx-auto pt-32 sm:pt-36 lg:pt-48 px-4 sm:px-6 md:px-8 ">
-        <h1 className="text-primary font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight text-center">
+        <h1 className="animate-slidein [--slidein-delay:300ms] opacity-0 text-primary font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight text-center">
           {t("title")}
         </h1>
-        <p className="mt-6 text-lg text-center max-w-3xl mx-auto">
+        <p className="animate-slidein [--slidein-delay:500ms] opacity-0 mt-6 text-lg text-center max-w-3xl mx-auto">
           Construo aplicações focadas na{" "}
-          <span className="text-accent">experiência do usuário</span> e no{" "}
+          <span className="text-accent ">experiência do usuário</span> e no{" "}
           <span className="text-accent">desgin</span>, proporcionando{" "}
           <span className="text-accent">experiências únicas</span> para as
           pessoas. Apenas fazer bem feito não é mais o suficiente.
         </p>
 
-        <figure className="md:flex rounded-x p-8 md:p-0 mt-24 md:mt-32 text-center shadow-xl text-slate-900 dark:text-slate-300 bg-base-200/50 dark:bg-base-200/70 ring-1 ring-slate-900/5 dark:shadow-white/5 dark:ring-0">
+        <figure className="animate-slidein [--slidein-delay:700ms] opacity-0 md:flex rounded-3xl p-8 md:p-0 mt-24 md:mt-32 text-center shadow-xl text-slate-900 dark:text-slate-300 bg-base-200/50 dark:bg-base-200/70 ring-1 ring-slate-900/5 dark:shadow-white/5 dark:ring-0">
           <Image
-            className="w-36 h-36 md:w-48 md:h-auto object-cover md:object-contain rounded-full md:rounded mx-auto"
+            className="w-36 h-36 md:w-48 md:h-auto object-cover md:object-contain rounded-full md:rounded-3xl mx-auto"
             src="/images/me.jpg"
             alt="Eu"
             width={1487}
@@ -35,7 +35,7 @@ export function WelcomeSection() {
           <div className="pt-6 md:p-8 text-center md:text-left space-y-4">
             <blockquote>
               <p className="text-lg font-medium">
-                “Nos últimos 7 anos, como desenvolvedor, trabalhei com grandes
+                “Nos últimos 8 anos, como desenvolvedor, trabalhei com grandes
                 empresas para ajudá-las a alcançar todo o seu potencial e atrair
                 novos clientes por meio da tecnologia.”
               </p>
@@ -49,7 +49,7 @@ export function WelcomeSection() {
           </div>
         </figure>
 
-        <div className="flex justify-center mt-24 md:mt-72">
+        <div className="animate-slidein [--slidein-delay:900ms] opacity-0 flex justify-center mt-24 md:mt-72">
           <div className="stats stats-vertical md:stats-horizontal bg-base-200 shadow">
             <div className="stat">
               <div className="stat-figure text-secondary">

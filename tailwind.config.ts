@@ -37,7 +37,23 @@ const config = {
         "2xl": "1400px",
       },
     },
-    extend: {},
+    extend: {
+      keyframes: {
+        slidein: {
+          from: {
+            opacity: "0",
+            transform: "translateY(-10px)",
+          },
+          to: {
+            opacity: "1",
+            transform: "translateY(0)",
+          },
+        },
+      },
+      animation: {
+        slidein: "slidein 1s ease var(--slidein-delay, 0) forwards",
+      },
+    },
     backgroundImage: {
       "grid-slate-400": "url('/images/grid-background/bg-grid-slate-400.svg')",
       "grid-slate-900": "url('/images/grid-background/bg-grid-slate-900.svg')",
