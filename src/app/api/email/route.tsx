@@ -6,7 +6,7 @@ export async function POST(req: NextRequest) {
 
   const payload = {
     from: {
-      email: data.email,
+      email: process.env.SEND_TO,
     },
     personalizations: [
       {

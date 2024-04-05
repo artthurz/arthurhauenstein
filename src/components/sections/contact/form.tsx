@@ -46,7 +46,7 @@ export default function Form() {
       body: JSON.stringify(data),
     });
 
-    if (response.status !== 200) {
+    if (!response.ok) {
       throw new Error(response.statusText);
     }
   }
@@ -55,9 +55,9 @@ export default function Form() {
     async (data: TFormSchema) => {
       setIsLoading(true);
       if (JSON.stringify(data) === JSON.stringify(lastSentEmail)) {
-        toast.success(
-          "Solicitação recebida, em breve entraremos em contato você!"
-        );
+        toast.success("Solicitação recebida!", {
+          description: "Em breve retornarei o seu contato!",
+        });
         setIsLoading(false);
         return;
       }
@@ -66,7 +66,7 @@ export default function Form() {
         .then(() => {
           setLastSentEmail(data);
           toast.success("Solicitação recebida!", {
-            description: "Em breve entraremos em contato você!",
+            description: "Em breve retornarei o seu contato!",
           });
         })
         .catch(() =>
