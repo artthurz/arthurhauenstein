@@ -22,7 +22,7 @@ export function Menu() {
         onClick={() => dialogRef.current?.showModal()}
         className="btn btn-ghost"
       >
-        <MoreVerticalIcon className="text-tertiary w-6 h-6 flex items-center justify-center hover:text-slate-600 dark:hover:text-slate-300" />
+        <MoreVerticalIcon className="w-6 h-6 flex items-center justify-center hover:text-slate-600 dark:hover:text-slate-300" />
       </button>
       {createPortal(
         <dialog

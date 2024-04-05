@@ -24,7 +24,7 @@ export function LocaleSelector({ onSelect }: LocaleSelctorProps) {
   return (
     <div className="mt-6 pt-6 border-t border-slate-200 dark:border-slate-200/10">
       <div className="flex items-center justify-between">
-        <label htmlFor="language" className="font-normal text-tertiary">
+        <label htmlFor="language" className="font-normal">
           Mudar idioma
         </label>
         <div className="relative flex items-center ring-1 ring-slate-900/10 rounded-lg shadow-sm p-2 text-slate-700 font-semibold dark:bg-slate-600 dark:ring-0 dark:text-slate-200 dark:shadow-white/5">

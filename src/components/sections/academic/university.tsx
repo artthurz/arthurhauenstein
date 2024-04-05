@@ -7,10 +7,7 @@ import Link from "next/link";
 export async function University() {
   return (
     <div className="rounded mx-auto grid grid-cols-1 lg:gap-x-20 lg:grid-cols-2">
-      <div
-        className="z-10 lg:mt-16 relative p-3 col-start-1 row-start-1 flex flex-col-reverse rounded-lg bg-gradient-to-t from-black/75 via-black/0 sm:bg-none sm:row-start-2 sm:p-0 lg:row-start-1"
-        data-aos="zoom-in"
-      >
+      <div className="z-10 lg:mt-16 relative p-3 col-start-1 row-start-1 flex flex-col-reverse rounded-lg bg-gradient-to-t from-black/75 via-black/0 sm:bg-none sm:row-start-2 sm:p-0 lg:row-start-1">
         <h1 className="mt-1 text-lg font-semibold text-white sm:text-slate-900 md:text-2xl dark:sm:text-white">
           Univates
         </h1>
@@ -22,9 +19,6 @@ export async function University() {
         <Image
           className="w-full h-60 object-cover rounded-lg sm:h-52 sm:col-span-2 lg:col-span-full"
           loading="lazy"
-          data-aos="zoom-in-down"
-          data-aos-delay="300"
-          data-aos-duration="1000"
           src="/images/university/1.jpg"
           alt="Biblioteca e Teatro Externo"
           height={4000}
@@ -33,9 +27,6 @@ export async function University() {
         <Image
           className="hidden w-full h-52 object-cover rounded-lg sm:block sm:col-span-2 md:col-span-1 lg:row-start-2 lg:col-span-2 lg:h-32"
           loading="lazy"
-          data-aos="zoom-in-right"
-          data-aos-delay="700"
-          data-aos-duration="1000"
           src="/images/university/2.jpg"
           alt="Biblioteca Interno"
           height={4000}
@@ -44,18 +35,13 @@ export async function University() {
         <Image
           className="hidden w-full h-52 object-cover rounded-lg md:block lg:row-start-2 lg:col-span-2 lg:h-32"
           loading="lazy"
-          data-aos="zoom-in-left"
-          data-aos-delay="1000"
           src="/images/university/3.jpg"
           alt="Teatro Interno"
           height={4000}
           width={4000}
         />
       </div>
-      <dl
-        className="mt-4 text-xs font-medium flex items-center row-start-2 sm:mt-1 sm:row-start-3 md:mt-2.5 lg:row-start-2"
-        data-aos="zoom-in"
-      >
+      <dl className="mt-4 text-xs font-medium flex items-center row-start-2 sm:mt-1 sm:row-start-3 md:mt-2.5 lg:row-start-2">
         <dt className="sr-only">Reviews</dt>
         <dd className="text-indigo-600 flex items-center dark:text-indigo-400">
           <Star className="h-4 w-4 mr-1 text-indigo-400" />
@@ -91,10 +77,7 @@ export async function University() {
           Lajeado, RS
         </dd>
       </dl>
-      <div
-        className="mt-4 col-start-1 row-start-3 self-center sm:mt-0 sm:col-start-2 sm:row-start-2 sm:row-span-2 lg:mt-6 lg:col-start-1 lg:row-start-3 lg:row-end-4"
-        data-aos="zoom-in"
-      >
+      <div className="mt-4 col-start-1 row-start-3 self-center sm:mt-0 sm:col-start-2 sm:row-start-2 sm:row-span-2 lg:mt-6 lg:col-start-1 lg:row-start-3 lg:row-end-4">
         <Link
           type="button"
           className="btn bg-indigo-600 hover:bg-indigo-500 text-white"
@@ -106,10 +89,7 @@ export async function University() {
           <ChevronRight className="h-4 w-4" />
         </Link>
       </div>
-      <p
-        className="mt-4 text-sm leading-6 col-start-1 sm:col-span-2 lg:mt-6 lg:row-start-4 lg:col-span-1 text-tertiary"
-        data-aos="zoom-in"
-      >
+      <p className="mt-4 text-sm leading-6 col-start-1 sm:col-span-2 lg:mt-6 lg:row-start-4 lg:col-span-1">
         Fundada em <b>1969</b> a Universidade do Vale do Taquari é{" "}
         <b>referência</b> em ensino. Para comportar seus mais de{" "}
         <b>12 mil alunos</b>, o campus da Univates conta com{" "}

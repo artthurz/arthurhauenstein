@@ -1,33 +1,4 @@
-import { cn } from "@/lib/utils";
-import { ChevronRight } from "lucide-react";
-import Image from "next/image";
-import Link from "next/link";
-import React from "react";
-
-interface ButtonProps {
-  name: string;
-  link: string;
-  children: React.ReactNode;
-  className: string;
-}
-
-function Button(props: ButtonProps) {
-  return (
-    <Link
-      className={cn(
-        "duration-200 gap-2 bg-opacity-80  p-2 font-semibold text-[1.2rem] text-white inline-flex items-center space-x-2 rounded shadow-xl ring-1 ring-slate-900/5 dark:shadow-white/5 dark:ring-0",
-        props.className
-      )}
-      href={props.link}
-      target="_blank"
-      rel="noreferrer"
-    >
-      {props.children}
-      {props.name}
-      <ChevronRight className="w-6 h-6" />
-    </Link>
-  );
-}
+import Form from "./form";
 
 export function ContactSection() {
   return (
@@ -50,12 +21,9 @@ export function ContactSection() {
       <div className="relative pt-10 xl:pt-0 mt-10 xl:mt-2">
         <div className="hidden dark:block absolute inset-x-0 h-[8rem] bg-gradient-to-b from-[#0c1120] top-0 xl:top-8" />
         <div className="absolute top-0 inset-x-0 bg-top bg-no-repeat bg-beams-blue-light dark:bg-beams-blue-dark [background-size:62.5rem] [height:8rem] xl:top-8 [mask-image:linear-gradient(0deg,transparent,black)]" />
-        <div className="absolute inset-x-0 h-[8rem] bg-grid-slate-900 bg-top [mask-image:linear-gradient(0deg,transparent,black)] dark:bg-grid-slate-400 dark:bg-[center_top_-1px] dark:border-t dark:border-slate-100/5 top-0 xl:top-8" />
-        <div className="relative h-44 sm:h-32 lg:h-24 max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
-          <div
-            className="flex flex-wrap justify-center gap-4"
-            data-aos="zoom-in-up"
-          ></div>
+        <div className="absolute inset-x-0 h-[16rem] bg-grid-slate-900 bg-top [mask-image:linear-gradient(0deg,transparent,black)] dark:bg-grid-slate-400 dark:bg-[center_top_-1px] dark:border-t dark:border-slate-100/5 top-0 xl:top-16" />
+        <div className="flex justify-center relative max-w-7xl mx-auto px-4 sm:px-6 md:px-8 mb-16">
+          <Form />
         </div>
       </div>
     </section>

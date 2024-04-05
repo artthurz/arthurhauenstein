@@ -81,10 +81,8 @@ const courses = [
 
 export function Content() {
   return (
-    /* @ts-expect-error Server Component */
     <Line>
       {courses.map((course, index) => (
-        /* @ts-expect-error Server Component */
         <Mark
           key={index}
           index={index}

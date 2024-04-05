@@ -8,7 +8,6 @@ const config = {
         light: {
           ...require("daisyui/src/theming/themes")["light"],
           primary: "#0F172A",
-          tertiary: "#1F2937",
           accent: "#0EA5E9",
           "base-100": "#ffffff",
           "base-200": "#ffffff",
@@ -16,7 +15,6 @@ const config = {
         dark: {
           ...require("daisyui/src/theming/themes")["dark"],
           primary: "#ffffff",
-          tertiary: "#94a3b8",
           accent: "#38BDF8",
           "base-100": "#0F172A",
           "base-200": "#1E293B",

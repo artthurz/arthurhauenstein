@@ -121,7 +121,6 @@ export function Card({
         "relative transition-all backdrop-blur-md grid pd-2 w-36 h-36 grid-cols-1 lg:p-4 rounded-xl md:w-60 md:h-28 md:grid-cols-2 overflow-hidden justify-center items-center z-10 touch-none",
         className
       )}
-      data-aos="zoom-in"
     >
       <div ref={wrapperRef} className="absolute z-10 inset-0" />
       <div style={childrenPerspective}>{children}</div>

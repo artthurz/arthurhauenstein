@@ -33,7 +33,7 @@ interface MarkProps {
 
 export async function MarkOld(props: MarkProps) {
   return (
-    <li data-aos="zoom-in-right">
+    <li>
       <div
         className={cn(
           `timeline-middle w-6 h-6 rounded-full ring-8 ring-white dark:ring-gray-900`,
@@ -73,7 +73,7 @@ export async function Mark(props: MarkProps) {
     <li>
       <hr
         className={cn(
-          "bg-slate-600 dark:bg-slate-400",
+          "bg-slate-400 dark:bg-slate-500",
           props.index === 0 ? "hidden" : "block"
         )}
       />
@@ -123,7 +123,7 @@ export async function Mark(props: MarkProps) {
       </div>
       <hr
         className={cn(
-          "bg-slate-600 dark:bg-slate-400",
+          "bg-slate-400 dark:bg-slate-500",
           props.index === props.lastIndex ? "hidden" : "block"
         )}
       />

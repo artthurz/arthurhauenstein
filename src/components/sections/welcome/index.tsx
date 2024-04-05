@@ -13,18 +13,10 @@ export function WelcomeSection() {
         <div className="min-h-[70rem] absolute inset-0 bg-gridSlate900 bg-[bottom_1px_center] dark:bg-grid-slate-400 dark:bg-bottom dark:border-b dark:border-slate-100/5 [mask-image:linear-gradient(transparent,black)] [webkit-mask-image:linear-gradient(transparent,black)]" />
       </div>
       <div className="relative max-w-6xl mx-auto pt-32 sm:pt-36 lg:pt-48 px-4 sm:px-6 md:px-8 ">
-        <h1
-          className="text-primary font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight text-center"
-          data-aos="zoom-in"
-        >
+        <h1 className="text-primary font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight text-center">
           {t("title")}
         </h1>
-        <p
-          className="mt-6 text-lg text-tertiary text-center max-w-3xl mx-auto"
-          data-aos="fade-up"
-          data-aos-easing="ease"
-          data-aos-delay="500"
-        >
+        <p className="mt-6 text-lg text-center max-w-3xl mx-auto">
           Construo aplicações focadas na{" "}
           <span className="text-accent">experiência do usuário</span> e no{" "}
           <span className="text-accent">desgin</span>, proporcionando{" "}

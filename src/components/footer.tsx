@@ -11,7 +11,7 @@ export async function Footer() {
         <aside>
           <LogoIcon className="w-auto h-5" />
           <p className="font-bold">Providing reliable tech since 2016</p>
-          <p>Copyright © 2024 - All right reserved</p>
+          <p>Est. 2024 - Open sourced</p>
         </aside>
         <nav>
           <h6 className="footer-title">Social</h6>

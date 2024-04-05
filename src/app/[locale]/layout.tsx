@@ -53,10 +53,8 @@ export default function RootLayout({
     <html lang={locale}>
       <body className={cn(inter.className, "bg-slate-50 dark:bg-[#0B1120]")}>
         <Providers>
-          {/* @ts-expect-error Server Component */}
           <Header />
           {children}
-          {/* @ts-expect-error Server Component */}
           <Footer />
         </Providers>
       </body>
