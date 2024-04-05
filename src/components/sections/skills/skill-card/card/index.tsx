@@ -119,6 +119,7 @@ export function Card({
       {...props}
       className={cn(
         "relative transition-all backdrop-blur-md grid pd-2 w-36 h-36 grid-cols-1 lg:p-4 rounded-xl md:w-60 md:h-28 md:grid-cols-2 overflow-hidden justify-center items-center z-10 touch-none",
+        isDesktop || !disableOnMobile ? "touch-none" : "",
         className
       )}
     >

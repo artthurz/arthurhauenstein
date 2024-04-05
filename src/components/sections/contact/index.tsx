@@ -14,8 +14,8 @@ export function ContactSection() {
           Precisando de um desenvolvedor? Vamos trabalhar juntos.
         </p>
         <p className="mt-4 max-w-3xl space-y-6">
-          Utilize as redes abaixos para me contatar, estou a disposição para
-          responder suas dúvidas
+          Utilize o formulário ou as redes abaixos para me contatar, estou a
+          disposição para responder suas dúvidas.
         </p>
       </div>
       <div className="relative pt-10 xl:pt-0 mt-10 xl:mt-2">
