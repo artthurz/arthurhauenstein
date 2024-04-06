@@ -1,13 +1,18 @@
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Poppins } from "next/font/google";
 import React from "react";
 import "./globals.css";
 import Providers from "./providers";
 import { cn } from "@/lib/utils";
 
-const inter = Inter({ subsets: ["latin"] });
+const poppins = Poppins({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-poppins",
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+});
 
 export const metadata: Metadata = {
   title: "Arthur Hauenstein",
@@ -51,7 +56,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang={locale}>
-      <body className={cn(inter.className, "bg-slate-50 dark:bg-[#0B1120]")}>
+      <body className={cn(poppins.className, "bg-slate-50 dark:bg-[#0B1120]")}>
         <Providers>
           <Header />
           {children}
