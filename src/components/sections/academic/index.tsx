@@ -28,7 +28,7 @@ export function AcademicSection() {
       <div className="relative pt-10 xl:pt-0 mt-10 xl:mt-2">
         <div className="hidden dark:block absolute inset-x-0 h-[37.5rem] bg-gradient-to-b from-[#0c1120] top-0 xl:top-8" />
         <div className="absolute top-0 inset-x-0 bg-top bg-no-repeat bg-beams-indigo-light dark:bg-beams-indigo-dark  [background-size:125.5rem] [height:30rem] xl:top-8" />
-        <div className="absolute inset-x-0 h-[37.5rem] bg-grid-slate-900 bg-top [mask-image:linear-gradient(0deg,transparent,black)] dark:bg-grid-slate-400 dark:bg-[center_top_-1px] dark:border-t dark:border-slate-100/5 top-0 xl:top-8" />
+        <div className="absolute inset-x-0 h-[37.5rem] dark:bg-grid-slate-900 bg-top [mask-image:linear-gradient(0deg,transparent,black)] bg-grid-slate-200 dark:bg-[center_top_-1px] dark:border-t dark:border-slate-100/5 top-0 xl:top-8" />
         <div className="relative h-96 max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
           <University />
         </div>
