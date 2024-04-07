@@ -34,7 +34,7 @@ export const Highlight = ({
         className
       )}
     >
-      {children}
+      <span className="relative z-10">{children}</span>
     </motion.span>
   );
 };
