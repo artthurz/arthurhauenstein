@@ -48,14 +48,20 @@ module.exports = {
             transform: "translateY(0)",
           },
         },
+        meteor: {
+          "0%": { transform: "rotate(215deg) translateX(0)", opacity: "1" },
+          "70%": { opacity: "1" },
+          "100%": {
+            transform: "rotate(215deg) translateX(-500px)",
+            opacity: "0",
+          },
+        },
       },
       animation: {
         slidein: "slidein 1s ease var(--slidein-delay, 0) forwards",
+        "meteor-effect": "meteor 5s linear infinite",
       },
-      backgroundImage: ({ theme }) => ({
-        hero: `linear-gradient(to right, ${theme("colors.indigo.500")},${theme(
-          "colors.sky.500"
-        )},${theme("colors.amber.600")},${theme("colors.amber.900")})`,
+      backgroundImage: {
         "beams-blue-dark":
           "url('/images/beams-background/beams-blue-dark.png')",
         "beams-blue-light":
@@ -74,7 +80,7 @@ module.exports = {
         "beams-dark": "url('/images/beams-background/beams-dark.jpg')",
         "beams-light": "url('/images/beams-background/beams-light.png')",
         overlay: "url('/images/beams-background/overlay.webp')",
-      }),
+      },
     },
   },
   plugins: [

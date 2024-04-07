@@ -3,12 +3,14 @@ import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import ArthurPhoto from "../../../../public/images/me.jpeg";
 import Image from "next/image";
+import { Meteors } from "@/components/ui/meteors";
 
 export default function Hero() {
   const t = useTranslations("root.welcome");
 
   return (
-    <div className="flex flex-col md:flex-row gap-8 items-center">
+    <div className="flex flex-col md:flex-row gap-8 items-center relative">
+      <Meteors className="-z-10" number={20} />
       <div>
         <motion.h1
           initial={{
