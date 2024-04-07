@@ -1,7 +1,20 @@
 {
   "root": {
     "welcome": {
-      "title": "Welcome to my portfolio, follow my trajectory so far."
+      "title": {
+        "1": "Hi, I`m Arthur, a",
+        "2": "software engineer",
+        "3": "with a passion for Tech and Design"
+      },
+      "subtitle": {
+        "1": "I build applications focused on",
+        "2": "user experience",
+        "3": "and",
+        "4": "desgin",
+        "5": ", providing",
+        "6": "unique experiences",
+        "7": "for people."
+      }
     },
     "skills": {}
   }

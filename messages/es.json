@@ -1,7 +1,20 @@
 {
   "root": {
     "welcome": {
-      "title": "Bienvenido a mi portafolio, sigue mi trayectoria hasta ahora."
+      "title": {
+        "1": "Hola, soy Arthur, un",
+        "2": "ingeniero de software",
+        "3": "apasionado por Tech y Design"
+      },
+      "subtitle": {
+        "1": "Construyo aplicaciones enfocadas en la",
+        "2": "experiencia de usuario",
+        "3": "y el",
+        "4": "desgin",
+        "5": ", brindando",
+        "6": "experiencias únicas",
+        "7": "a las personas."
+      }
     },
     "skills": {}
   }

@@ -57,7 +57,7 @@ export default function RootLayout({
   return (
     <html lang={locale}>
       <body className={cn(poppins.className, "bg-slate-50 dark:bg-[#0B1120]")}>
-        <Providers>
+        <Providers locale={locale}>
           <Header />
           {children}
           <Footer />

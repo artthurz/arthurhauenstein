@@ -1,7 +1,20 @@
 {
   "root": {
     "welcome": {
-      "title": "Bem-vindo ao meu portifólio, acompanhe minha tragetória até aqui."
+      "title": {
+        "1": "Olá, sou o Arthur, um",
+        "2": "engenheiro de software",
+        "3": "apaixonado por Tech e Design"
+      },
+      "subtitle": {
+        "1": "Construo aplicações focadas na",
+        "2": "experiência do usuário",
+        "3": "e no",
+        "4": "desgin",
+        "5": ", proporcionando",
+        "6": "experiências únicas",
+        "7": "para as pessoas."
+      }
     },
     "skills": {}
   }
