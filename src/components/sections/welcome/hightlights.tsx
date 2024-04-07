@@ -1,6 +1,8 @@
 "use server";
 
-import { Microscope, TestTubeDiagonal } from "lucide-react";
+import ArthurPhoto4 from "../../../../public/images/me4.jpg";
+import BTGLogo from "../../../../public/images/btg.jpg";
+import UnivatesLogo from "../../../../public/images/univates.jpg";
 import Image from "next/image";
 import React from "react";
 import { useTranslations } from "next-intl";
@@ -20,7 +22,14 @@ export default async function Hightlights() {
         </div>
         <div className="avatar">
           <div className="w-16 rounded-full">
-            <Image alt="me" width={64} height={64} src="/images/btg.jpg" />
+            <Image
+              alt="me"
+              width={64}
+              height={64}
+              src={BTGLogo}
+              loading="lazy"
+              placeholder="blur"
+            />
           </div>
         </div>
       </div>
@@ -34,7 +43,14 @@ export default async function Hightlights() {
         </div>
         <div className="avatar">
           <div className="w-16 rounded-full">
-            <Image alt="me" width={64} height={64} src="/images/univates.jpg" />
+            <Image
+              alt="me"
+              width={64}
+              height={64}
+              src={UnivatesLogo}
+              loading="lazy"
+              placeholder="blur"
+            />
           </div>
         </div>
       </div>
@@ -56,7 +72,9 @@ export default async function Hightlights() {
               alt="me"
               width={64}
               height={64}
-              src="/images/me-secondary.jpg"
+              src={ArthurPhoto4}
+              loading="lazy"
+              placeholder="blur"
             />
           </div>
         </div>
