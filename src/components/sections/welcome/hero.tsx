@@ -26,7 +26,7 @@ export default function Hero() {
           className="text-primary font-extrabold text-4xl sm:text-5xl lg:text-[3.5rem] tracking-tight text-center"
         >
           {t("title.1")}{" "}
-          <Highlight className="text-black dark:text-white">
+          <Highlight className="dark:from-indigo-500 dark:to-sky-500 from-indigo-300 to-sky-300">
             {t("title.2")}
           </Highlight>{" "}
           {t("title.3")}
