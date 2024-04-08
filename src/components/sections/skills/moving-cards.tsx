@@ -45,11 +45,11 @@ export const InfiniteMovingCards = ({
   const getSpeed = useCallback(() => {
     if (containerRef.current) {
       if (speed === "fast") {
-        containerRef.current.style.setProperty("--animation-duration", "50s");
+        containerRef.current.style.setProperty("--animation-duration", "20s");
       } else if (speed === "normal") {
-        containerRef.current.style.setProperty("--animation-duration", "200s");
+        containerRef.current.style.setProperty("--animation-duration", "40s");
       } else {
-        containerRef.current.style.setProperty("--animation-duration", "300s");
+        containerRef.current.style.setProperty("--animation-duration", "80s");
       }
     }
   }, [speed]);
@@ -78,13 +78,16 @@ export const InfiniteMovingCards = ({
   return (
     <div
       ref={containerRef}
-      className={cn("scroller relative z-20 h-56 overflow-hidden", className)}
+      className={cn(
+        "scroller relative z-20 h-56 overflow-scroll md:overflow-hidden",
+        className
+      )}
     >
       <ul
         ref={scrollerRef}
         className={cn(
-          "flex min-w-full h-52 shrink-0 gap-4 py-4 w-max flex-nowrap",
-          start && "animate-scroll ",
+          "max-w-7xl flex min-w-full h-52 gap-4 py-4 w-max flex-nowrap",
+          start && "animate-scroll",
           pauseOnHover && "hover:[animation-play-state:paused]"
         )}
       >
@@ -96,7 +99,7 @@ export const InfiniteMovingCards = ({
             )}
             key={item.title}
           >
-            <blockquote>
+            <div>
               <div
                 aria-hidden="true"
                 className="user-select-none -z-1 pointer-events-none absolute -left-0.5 -top-0.5 h-[calc(100%_+_4px)] w-[calc(100%_+_4px)]"
@@ -111,7 +114,7 @@ export const InfiniteMovingCards = ({
                 width={80}
                 height={80}
               />
-            </blockquote>
+            </div>
           </li>
         ))}
       </ul>
@@ -120,9 +123,7 @@ export const InfiniteMovingCards = ({
 };
 
 export function SkillCards() {
-  return (
-    <InfiniteMovingCards items={skills} direction="right" speed="normal" />
-  );
+  return <InfiniteMovingCards items={skills} direction="right" speed="slow" />;
 }
 
 const skills = [
