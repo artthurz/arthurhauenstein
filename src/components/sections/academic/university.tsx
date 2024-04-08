@@ -1,5 +1,6 @@
 "use server";
 
+import { Carousel } from "@/components/ui/carousel";
 import GlassCard from "@/components/ui/glass-card";
 import { ChevronRight, Star } from "lucide-react";
 import Image from "next/image";
@@ -17,7 +18,16 @@ export async function University() {
             Universidade do Vale do Taquari
           </p>
         </div>
-        <div className="grid gap-4 col-start-1 col-end-3 row-start-1 sm:mb-6 sm:grid-cols-4 lg:gap-6 lg:col-start-2 lg:row-end-6 lg:row-span-6 lg:mb-0">
+        <Carousel
+          className="grid w-full h-60 relative sm:hidden gap-4 col-start-1 col-end-3 row-start-1"
+          imageClassName="w-full h-60 rounded-2xl"
+          images={[
+            "/images/university/1.jpg",
+            "/images/university/2.jpg",
+            "/images/university/3.jpg",
+          ]}
+        />
+        <div className="hidden sm:grid gap-4 col-start-1 col-end-3 row-start-1 sm:mb-6 sm:grid-cols-4 lg:gap-6 lg:col-start-2 lg:row-end-6 lg:row-span-6 lg:mb-0">
           <Image
             className="w-full h-60 object-cover rounded-lg sm:h-52 sm:col-span-2 lg:col-span-full"
             loading="lazy"

@@ -56,8 +56,8 @@ export default function Form() {
     async (data: TFormSchema) => {
       setIsLoading(true);
       if (JSON.stringify(data) === JSON.stringify(lastSentEmail)) {
-        toast.success("Solicitação recebida!", {
-          description: "Em breve retornarei o seu contato!",
+        toast.success("Contato recebido!", {
+          description: "Em breve retornarei o sua mensagem.",
         });
         setIsLoading(false);
         return;
@@ -66,13 +66,13 @@ export default function Form() {
       await sendEmail(data)
         .then(() => {
           setLastSentEmail(data);
-          toast.success("Solicitação recebida!", {
-            description: "Em breve retornarei o seu contato!",
+          toast.success("Contato recebido!", {
+            description: "Em breve retornarei o sua mensagem.",
           });
         })
         .catch(() =>
           toast.error("Bug descoberto! 🐞", {
-            description: "Vou correr para arrumar esta funcionalidade!",
+            description: "Vou correr para arrumar esta funcionalidade.",
           })
         )
         .finally(() => setIsLoading(false));
