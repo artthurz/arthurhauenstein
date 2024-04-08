@@ -91,7 +91,7 @@ export const InfiniteMovingCards = ({
         {items.map((item) => (
           <li
             className={cn(
-              "w-[150px] max-w-full relative rounded-2xl border border-base-300 flex-shrink-0 px-8 py-6 md:w-[250px] text-center shadow-xl text-slate-900 dark:text-slate-300 bg-base-200/50 dark:bg-base-200/70 ring-1 ring-slate-900/5 dark:shadow-white/5 dark:ring-0",
+              "w-[220px] max-w-full relative rounded-2xl border border-base-300 flex-shrink-0 px-8 py-6 md:w-[300px] text-center shadow-xl text-slate-900 dark:text-slate-300 bg-base-200/50 dark:bg-base-200/70 ring-1 ring-slate-900/5 dark:shadow-white/5 dark:ring-0",
               item.color
             )}
             key={item.title}
