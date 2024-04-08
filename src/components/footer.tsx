@@ -1,6 +1,7 @@
 "use server";
 
 import LogoIcon from "@/assets/LogoIcon";
+import { Heart } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -11,7 +12,10 @@ export async function Footer() {
         <aside>
           <LogoIcon className="w-auto h-5" />
           <p className="font-bold">Providing reliable tech since 2016</p>
-          <p>Est. 2024 - Open sourced</p>
+          <div className="flex gap-1">
+            <span>Made with</span>
+            <Heart className="size-4 fill-current" />
+          </div>
         </aside>
         <nav>
           <h6 className="footer-title">Social</h6>

@@ -29,53 +29,14 @@ interface MarkProps {
   background: string;
   textColor: string;
   fillColor: string;
-}
-
-export async function MarkOld(props: MarkProps) {
-  return (
-    <li>
-      <div
-        className={cn(
-          `timeline-middle w-6 h-6 rounded-full ring-8 ring-white dark:ring-gray-900`,
-          props.background
-        )}
-      >
-        <CalendarCheck className={cn("h-4 w-4", props.textColor)} />
-      </div>
-      <h3 className="my-6 mx-2 flex justify-between sm:justify-normal items-center mb-1 text-lg font-semibold text-gray-900 dark:text-white">
-        {props.name}
-        <div
-          className={cn(
-            "flex justify-center items-center gap-2 me-2 px-2.5 py-0.5 rounded ms-3",
-            props.background
-          )}
-        >
-          <span className={cn(`text-sm font-medium`, props.textColor)}>
-            {props.institution}
-          </span>
-          <a href={props.link} target="_blank" rel="noreferrer">
-            <ExternalLink className={cn("h-4 w-4", props.textColor)} />
-          </a>
-        </div>
-      </h3>
-      <time className="flex items-center justify-between mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-        {props.date}
-      </time>
-      <p className="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
-        {props.description}
-      </p>
-    </li>
-  );
+  lineGradiant: string;
 }
 
 export async function Mark(props: MarkProps) {
   return (
     <li>
       <hr
-        className={cn(
-          "bg-slate-400 dark:bg-slate-500",
-          props.index === 0 ? "hidden" : "block"
-        )}
+        className={cn(props.index === 0 ? "hidden" : "block", props.background)}
       />
       <div className="timeline-middle">
         <svg
@@ -103,7 +64,7 @@ export async function Mark(props: MarkProps) {
         <time className="font-mono italic">{props.date}</time>
         <div
           className={cn(
-            "flex items-center gap-2 text-lg font-black text-primary",
+            "flex items-center gap-2 text-lg font-bold text-primary",
             props.index % 2 === 0 ? "md:flex-row-reverse" : ""
           )}
         >
@@ -123,7 +84,7 @@ export async function Mark(props: MarkProps) {
       </div>
       <hr
         className={cn(
-          "bg-slate-400 dark:bg-slate-500",
+          props.lineGradiant,
           props.index === props.lastIndex ? "hidden" : "block"
         )}
       />

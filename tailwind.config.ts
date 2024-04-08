@@ -56,10 +56,17 @@ module.exports = {
             opacity: "0",
           },
         },
+        scroll: {
+          to: {
+            transform: "translate(calc(-50% - 0.5rem))",
+          },
+        },
       },
       animation: {
         slidein: "slidein 1s ease var(--slidein-delay, 0) forwards",
         "meteor-effect": "meteor 5s linear infinite",
+        scroll:
+          "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
       },
       backgroundImage: {
         "beams-blue-dark":

@@ -1,5 +1,9 @@
 import { Line, Mark } from "./timeline";
 
+const Teste = (
+  <div className="bg-[linear-gradient(rgb(154,52,18),transparent,rgb(107,33,168)]"></div>
+);
+
 const courses = [
   {
     name: "Carreira .NET Developer",
@@ -11,6 +15,8 @@ const courses = [
     background: "bg-blue-800 dark:bg-blue-300",
     textColor: "text-blue-800 dark:text-blue-300",
     fillColor: "fill-blue-100 dark:fill-blue-900",
+    lineGradiant:
+      "bg-[linear-gradient(rgb(30,64,175),transparent,rgb(157,23,77))] dark:bg-[linear-gradient(rgb(147,197,253),transparent,rgb(249,168,212))]",
   },
   {
     name: "UX Unicórnio",
@@ -22,6 +28,8 @@ const courses = [
     background: "bg-pink-800 dark:bg-pink-300",
     textColor: "text-pink-800 dark:text-pink-300",
     fillColor: "fill-pink-100 dark:fill-pink-900",
+    lineGradiant:
+      "bg-[linear-gradient(rgb(157,23,77),transparent,rgb(154,52,18))] dark:bg-[linear-gradient(rgb(249,168,212),transparent,rgb(253,186,116))]",
   },
   {
     name: "NestJS",
@@ -29,9 +37,11 @@ const courses = [
     description: "Desenvolvimento moderno de backend com foco em NestJS.",
     date: "09/2021",
     link: "https://www.udemy.com/course/nestjs-zero-to-hero/",
-    background: "bg-red-800 dark:bg-red-300",
-    textColor: "text-red-800 dark:text-red-300",
-    fillColor: "fill-red-100 dark:fill-red-900",
+    background: "bg-orange-800 dark:bg-orange-300",
+    textColor: "text-orange-800 dark:text-orange-300",
+    fillColor: "fill-orange-100 dark:fill-orange-900",
+    lineGradiant:
+      "bg-[linear-gradient(rgb(154,52,18),transparent,rgb(107,33,168))] dark:bg-[linear-gradient(rgb(253,186,116),transparent,rgb(216,180,254))]",
   },
   {
     name: "Formação em React Native",
@@ -43,6 +53,8 @@ const courses = [
     background: "bg-purple-800 dark:bg-purple-300",
     textColor: "text-purple-800 dark:text-purple-300",
     fillColor: "fill-purple-100 dark:fill-purple-900",
+    lineGradiant:
+      "bg-[linear-gradient(rgb(107,33,168),transparent,rgb(107,33,168))] dark:bg-[linear-gradient(rgb(216,180,254),transparent,rgb(216,180,254))]",
   },
   {
     name: "Formação em React",
@@ -54,6 +66,8 @@ const courses = [
     background: "bg-purple-800 dark:bg-purple-300",
     textColor: "text-purple-800 dark:text-purple-300",
     fillColor: "fill-purple-100 dark:fill-purple-900",
+    lineGradiant:
+      "bg-[linear-gradient(rgb(107,33,168),transparent,rgb(107,33,168))] dark:bg-[linear-gradient(rgb(216,180,254),transparent,rgb(216,180,254))]",
   },
   {
     name: "Formação em Node",
@@ -65,17 +79,20 @@ const courses = [
     background: "bg-purple-800 dark:bg-purple-300",
     textColor: "text-purple-800 dark:text-purple-300",
     fillColor: "fill-purple-100 dark:fill-purple-900",
+    lineGradiant:
+      "bg-[linear-gradient(rgb(107,33,168),transparent,rgb(107,33,168))] dark:bg-[linear-gradient(rgb(216,180,254),transparent,rgb(216,180,254))]",
   },
   {
-    name: "Formação Full-Stack",
+    name: "Bootcamp Full Stack",
     institution: "Rocketseat",
     description:
       "Bootcamp intensivo de 6 meses com foco em React.JS, React Native e Node.JS do zero ao deploy. Incluindo testes automatizados, integração contínua, publicação nas stores, e todas as biliotecas e frameworks importantes.",
     date: "10/2019",
-    link: "https://www.rocketseat.com.br/formacao/fullstack",
+    link: "https://www.rocketseat.com.br/",
     background: "bg-purple-800 dark:bg-purple-300",
     textColor: "text-purple-800 dark:text-purple-300",
     fillColor: "fill-purple-100 dark:fill-purple-900",
+    lineGradiant: "",
   },
 ];
 
