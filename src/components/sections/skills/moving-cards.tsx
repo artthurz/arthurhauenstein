@@ -3,6 +3,7 @@
 import { cn } from "@/lib/utils";
 import React, { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
+import GlassCard from "@/components/ui/glass-card";
 
 export const InfiniteMovingCards = ({
   items,
@@ -65,6 +66,13 @@ export const InfiniteMovingCards = ({
         }
       });
 
+      scrollerContent.forEach((item) => {
+        const duplicatedItem = item.cloneNode(true);
+        if (scrollerRef.current) {
+          scrollerRef.current.appendChild(duplicatedItem);
+        }
+      });
+
       getDirection();
       getSpeed();
       setStart(true);
@@ -73,97 +81,49 @@ export const InfiniteMovingCards = ({
 
   useEffect(() => {
     addAnimation();
-  }, [addAnimation]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div
       ref={containerRef}
-      className={cn(
-        "scroller relative z-20 h-56 overflow-scroll md:overflow-hidden",
-        className
-      )}
+      className={cn("scroller relative z-20 overflow-hidden", className)}
     >
       <ul
         ref={scrollerRef}
         className={cn(
-          "max-w-7xl flex min-w-full h-52 gap-4 py-4 w-max flex-nowrap",
+          "max-w-7xl flex min-w-full gap-4 justify-center items-center w-max flex-nowrap",
           start && "animate-scroll",
           pauseOnHover && "hover:[animation-play-state:paused]"
         )}
       >
         {items.map((item) => (
-          <li
-            className={cn(
-              "w-[220px] max-w-full relative rounded-2xl border border-base-300 flex-shrink-0 px-8 py-6 md:w-[300px] text-center shadow-xl text-slate-900 dark:text-slate-300 bg-base-200/50 dark:bg-base-200/70 ring-1 ring-slate-900/5 dark:shadow-white/5 dark:ring-0",
-              item.color
-            )}
+          <div
             key={item.title}
+            style={{
+              minWidth: "11rem",
+            }}
           >
-            <div>
-              <div
-                aria-hidden="true"
-                className="user-select-none -z-1 pointer-events-none absolute -left-0.5 -top-0.5 h-[calc(100%_+_4px)] w-[calc(100%_+_4px)]"
-              ></div>
-              <span className="relative z-20 text-2xl leading-[1.6] text-primary font-normal">
-                {item.title}
-              </span>
+            <GlassCard
+              className={cn(
+                "p-2 h-full flex min-w-4 flex-row gap-2 justify-center items-center border border-base-300 text-slate-900 dark:text-slate-300",
+                item.color
+              )}
+            >
               <Image
-                className={cn("w-20 h-20 object-contain mx-auto")}
+                className={cn("w-6 h-6 object-contain select-none")}
                 src={item.src}
                 alt={item.title}
-                width={80}
-                height={80}
+                width={24}
+                height={24}
               />
-            </div>
-          </li>
+              <span className="flex relative z-20 text-lg text-primary font-normal select-none">
+                {item.title}
+              </span>
+            </GlassCard>
+          </div>
         ))}
       </ul>
     </div>
   );
 };
-
-export function SkillCards() {
-  return <InfiniteMovingCards items={skills} direction="right" speed="slow" />;
-}
-
-const skills = [
-  {
-    title: "TypeScript",
-    src: "/images/skills/typescript.svg",
-    color: "border-[#2563eb]",
-  },
-  {
-    title: "React",
-    src: "/images/skills/react.svg",
-    color: "border-[#0ea5e9]",
-  },
-  {
-    title: "Next.js",
-    src: "/images/skills/next.svg",
-    color: "border-[#1e293b] dark:border-[white]",
-  },
-  {
-    title: "React Native",
-    src: "/images/skills/reactnative.svg",
-    color: "border-[#7c3aed]",
-  },
-  { title: "C#", src: "/images/skills/csharp.svg", color: "border-[#561cca]" },
-  {
-    title: ".NET",
-    src: "/images/skills/dotNET.svg",
-    color: "border-[#561cca]",
-  },
-  { title: "Node", src: "/images/skills/node.svg", color: "border-[#065f46]" },
-  {
-    title: "NestJS",
-    src: "/images/skills/nest.svg",
-    color: "border-[#be123c]",
-  },
-  { title: "HTML", src: "/images/skills/html.svg", color: "border-[#fb7185]" },
-  { title: "CSS", src: "/images/skills/css.svg", color: "border-[#1e40af]" },
-  {
-    title: "PostgreSQL",
-    src: "/images/skills/postgresql.svg",
-    color: "border-[#1e3a8a]",
-  },
-];

@@ -1,5 +1,47 @@
 import { useTranslations } from "next-intl";
-import { SkillCards } from "./moving-cards";
+import { InfiniteMovingCards } from "./moving-cards";
+
+const skills = [
+  {
+    title: "TypeScript",
+    src: "/images/skills/typescript.svg",
+    color: "border-[#2563eb]",
+  },
+  {
+    title: "React",
+    src: "/images/skills/react.svg",
+    color: "border-[#0ea5e9]",
+  },
+  {
+    title: "Next.js",
+    src: "/images/skills/next.svg",
+    color: "border-[#1e293b] dark:border-[white]",
+  },
+  {
+    title: "React Native",
+    src: "/images/skills/reactnative.svg",
+    color: "border-[#7c3aed]",
+  },
+  { title: "C#", src: "/images/skills/csharp.svg", color: "border-[#561cca]" },
+  {
+    title: ".NET",
+    src: "/images/skills/dotNET.svg",
+    color: "border-[#561cca]",
+  },
+  { title: "Node", src: "/images/skills/node.svg", color: "border-[#065f46]" },
+  {
+    title: "NestJS",
+    src: "/images/skills/nest.svg",
+    color: "border-[#be123c]",
+  },
+  { title: "HTML", src: "/images/skills/html.svg", color: "border-[#fb7185]" },
+  { title: "CSS", src: "/images/skills/css.svg", color: "border-[#1e40af]" },
+  {
+    title: "PostgreSQL",
+    src: "/images/skills/postgresql.svg",
+    color: "border-[#1e3a8a]",
+  },
+];
 
 export function SkillsSection() {
   const t = useTranslations("root.skills");
@@ -32,7 +74,14 @@ export function SkillsSection() {
         <div className="hidden dark:block absolute inset-x-0 h-[12rem] bg-gradient-to-b from-[#0c1120] top-0 xl:top-16" />
         <div className="absolute top-0 inset-x-0 bg-top bg-no-repeat bg-beams-pink-light dark:bg-beams-pink-dark  [background-size:80rem] [height:18rem] xl:top-16" />
         <div className="absolute inset-x-0 h-[12rem] bg-grid-slate-200 dark:bg-grid-slate-400 dark:opacity-15 bg-top [mask-image:linear-gradient(0deg,transparent,black)] dark:bg-[center_top_-1px] dark:border-t dark:border-slate-100/5 top-0 xl:top-8" />
-        <SkillCards />
+
+        <InfiniteMovingCards
+          className="mb-8"
+          items={skills}
+          direction="right"
+          speed="fast"
+        />
+        <InfiniteMovingCards items={skills} direction="left" speed="fast" />
       </div>
     </section>
   );
