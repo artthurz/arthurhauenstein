@@ -1,9 +1,5 @@
 import { Line, Mark } from "./timeline";
 
-const Teste = (
-  <div className="bg-[linear-gradient(rgb(154,52,18),transparent,rgb(107,33,168)]"></div>
-);
-
 const courses = [
   {
     name: "Carreira .NET Developer",

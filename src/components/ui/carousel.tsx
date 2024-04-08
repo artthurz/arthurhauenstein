@@ -5,7 +5,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { wrap } from "popmotion";
 import { cn } from "@/lib/utils";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, Dot } from "lucide-react";
 
 const variants = {
   enter: (direction: number) => {
@@ -28,12 +28,6 @@ const variants = {
   },
 };
 
-/**
- * Experimenting with distilling swipe offset and velocity into a single variable, so the
- * less distance a user has swiped, the more velocity they need to register as a swipe.
- * Should accomodate longer swipes and short flicks without having binary checks on
- * just distance thresholds and velocity > 0.
- */
 const swipeConfidenceThreshold = 10000;
 const swipePower = (offset: number, velocity: number) => {
   return Math.abs(offset) * velocity;
@@ -43,17 +37,15 @@ export const Carousel = ({
   images,
   className,
   imageClassName,
+  buttonsVisible = false,
 }: {
   images: string[];
   className: string;
   imageClassName: string;
+  buttonsVisible?: boolean;
 }) => {
   const [[page, direction], setPage] = useState([0, 0]);
 
-  // We only have 3 images, but we paginate them absolutely (ie 1, 2, 3, 4, 5...) and
-  // then wrap that within 0-2 to find our image ID in the array below. By passing an
-  // absolute page index as the `motion` component's `key` prop, `AnimatePresence` will
-  // detect it as an entirely new image. So you can infinitely paginate as few as 1 images.
   const imageIndex = wrap(0, images.length, page);
 
   const paginate = (newDirection: number) => {
@@ -63,7 +55,7 @@ export const Carousel = ({
   return (
     <div
       className={cn(
-        "w-full relativ flex justify-center items-center",
+        "w-full relative flex justify-center items-center",
         className
       )}
     >
@@ -95,18 +87,34 @@ export const Carousel = ({
           }}
         />
       </AnimatePresence>
-      <div
-        className="btn btn-circle bg-base-100 absolute z-10 select-none -right-5"
-        onClick={() => paginate(1)}
-      >
-        <ChevronRight className="size-4" />
-      </div>
-      <div
-        className="btn btn-circle bg-base-100 absolute z-10 select-none -left-5"
-        onClick={() => paginate(-1)}
-      >
-        <ChevronLeft className="size-4" />
-      </div>
+      <ul className="absolute h-fit w-fit z-10 left-0 right-0 m-auto bottom-2 flex gap-2">
+        {images.map((_, index) => (
+          <li key={index} onClick={() => setPage([index + 1, index + 1])}>
+            <div
+              className={cn(
+                "size-1 rounded-full",
+                index === imageIndex ? "bg-white" : "bg-slate-400/30"
+              )}
+            />
+          </li>
+        ))}
+      </ul>
+      {buttonsVisible && (
+        <button className="btn btn-circle btn-xs bg-slate-200/40 border-transparent absolute z-10 select-none right-2">
+          <ChevronRight
+            className="size-4 text-white"
+            onClick={() => paginate(1)}
+          />
+        </button>
+      )}
+      {buttonsVisible && (
+        <button className="btn btn-circle btn-xs bg-slate-200/40 border-transparent absolute z-10 select-none left-2">
+          <ChevronLeft
+            className="size-4 text-white"
+            onClick={() => paginate(-1)}
+          />
+        </button>
+      )}
     </div>
   );
 };

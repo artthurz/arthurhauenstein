@@ -9,8 +9,18 @@ import Link from "next/link";
 export async function University() {
   return (
     <GlassCard>
+      <Carousel
+        className="grid w-full h-60 relative md:hidden gap-4 col-start-1 col-end-3 row-start-1"
+        imageClassName="w-full h-60 rounded-2xl"
+        buttonsVisible
+        images={[
+          "/images/university/1.jpg",
+          "/images/university/2.jpg",
+          "/images/university/3.jpg",
+        ]}
+      />
       <div className="rounded mx-auto grid grid-cols-1 lg:gap-x-20 lg:grid-cols-2 p-6">
-        <div className="z-10 lg:mt-16 relative p-3 col-start-1 row-start-1 flex flex-col-reverse rounded-lg bg-gradient-to-t from-black/75 via-black/0 sm:bg-none sm:row-start-2 sm:p-0 lg:row-start-1">
+        <div className="z-10 lg:mt-16 relative col-start-1 flex flex-col-reverse rounded-lg  bg-none p-0 lg:row-start-1">
           <h1 className="mt-1 text-lg font-semibold text-white sm:text-slate-900 md:text-2xl dark:sm:text-white">
             Univates
           </h1>
@@ -18,16 +28,7 @@ export async function University() {
             Universidade do Vale do Taquari
           </p>
         </div>
-        <Carousel
-          className="grid w-full h-60 relative sm:hidden gap-4 col-start-1 col-end-3 row-start-1"
-          imageClassName="w-full h-60 rounded-2xl"
-          images={[
-            "/images/university/1.jpg",
-            "/images/university/2.jpg",
-            "/images/university/3.jpg",
-          ]}
-        />
-        <div className="hidden sm:grid gap-4 col-start-1 col-end-3 row-start-1 sm:mb-6 sm:grid-cols-4 lg:gap-6 lg:col-start-2 lg:row-end-6 lg:row-span-6 lg:mb-0">
+        <div className="hidden md:grid gap-4 col-start-1 col-end-3 row-start-1 sm:mb-6 sm:grid-cols-4 lg:gap-6 lg:col-start-2 lg:row-end-6 lg:row-span-6 lg:mb-0">
           <Image
             className="w-full h-60 object-cover rounded-lg sm:h-52 sm:col-span-2 lg:col-span-full"
             loading="lazy"

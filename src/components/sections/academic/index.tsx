@@ -3,7 +3,7 @@ import { University } from "./university";
 
 export function AcademicSection() {
   return (
-    <section id="academic">
+    <section id="academic" className="mb-80 sm:mb-32 md:mb-6 lg:mb-0">
       <div className="mb-6 max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
         <div className="w-16 h-16 p-[0.1875rem] rounded-full ring-1 ring-slate-900/10 shadow overflow-hidden dark:bg-indigo-500 dark:shadow-white/20">
           <div className="h-full w-full aspect-w-1 aspect-h-1 bg-[length:100%] bg-[url('/images/section/academic-light.png')] dark:bg-[url('/images/section/academic-dark.png')]" />
