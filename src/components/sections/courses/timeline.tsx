@@ -1,7 +1,7 @@
 "use server";
 
 import { cn } from "@/lib/utils";
-import { CalendarCheck, ExternalLink } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 
@@ -29,14 +29,16 @@ interface MarkProps {
   background: string;
   textColor: string;
   fillColor: string;
-  lineGradiant: string;
 }
 
 export async function Mark(props: MarkProps) {
   return (
     <li>
       <hr
-        className={cn(props.index === 0 ? "hidden" : "block", props.background)}
+        className={cn(
+          props.index === 0 ? "hidden" : "block",
+          "bg-slate-300/40"
+        )}
       />
       <div className="timeline-middle">
         <svg
@@ -84,7 +86,7 @@ export async function Mark(props: MarkProps) {
       </div>
       <hr
         className={cn(
-          props.lineGradiant,
+          "bg-slate-300/40",
           props.index === props.lastIndex ? "hidden" : "block"
         )}
       />
