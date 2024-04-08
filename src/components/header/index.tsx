@@ -12,9 +12,9 @@ export async function Header() {
       <LogoIcon className="w-auto h-5" />
       <div className="flex items-center">
         <Nav />
-        <div className="flex items-center gap-2 md:gap-4 md:border-l md:border-slate-200 ml-6 pl-6 md:dark:border-slate-800">
+        <div className="flex items-center gap-1 md:gap-2 md:border-l md:border-slate-200 ml-6 pl-6 md:dark:border-slate-800">
           <ThemeSelector />
-          <LocaleSelector className="hidden md:flex" />
+          <LocaleSelector className="hidden md:flex px-2" />
           <Menu />
         </div>
       </div>

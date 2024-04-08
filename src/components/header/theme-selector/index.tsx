@@ -18,7 +18,7 @@ export function ThemeSelector() {
 
   return (
     <div className="dropdown dropdown-end">
-      <div tabIndex={0} role="button" className="btn btn-ghost">
+      <div tabIndex={0} role="button" className="btn btn-ghost px-2">
         <span className="dark:hidden">
           <LightIcon isActive={theme === "light"} />
         </span>

@@ -20,7 +20,7 @@ export function Menu() {
     <React.Fragment>
       <button
         onClick={() => dialogRef.current?.showModal()}
-        className="btn btn-ghost"
+        className="btn btn-ghost px-2"
       >
         <MoreVerticalIcon className="w-6 h-6 flex items-center justify-center hover:text-slate-600 dark:hover:text-slate-300" />
       </button>
