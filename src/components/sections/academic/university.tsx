@@ -21,10 +21,10 @@ export async function University() {
       />
       <div className="rounded mx-auto grid grid-cols-1 lg:gap-x-20 lg:grid-cols-2 p-6">
         <div className="z-10 lg:mt-16 relative col-start-1 flex flex-col-reverse rounded-lg  bg-none p-0 lg:row-start-1">
-          <h1 className="mt-1 text-lg font-semibold text-white sm:text-slate-900 md:text-2xl dark:sm:text-white">
+          <h1 className="mt-1 text-lg font-semibold text-slate-900 md:text-2xl dark:text-white">
             Univates
           </h1>
-          <p className="text-sm leading-4 font-medium text-white sm:text-slate-500 dark:sm:text-slate-400">
+          <p className="text-sm leading-4 font-medium text-slate-500 dark:text-slate-400">
             Universidade do Vale do Taquari
           </p>
         </div>
