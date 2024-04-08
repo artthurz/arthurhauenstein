@@ -1,9 +1,9 @@
 "use client";
 
-import { cn } from "@/lib/utils";
-import React, { useCallback, useEffect, useState } from "react";
-import Image from "next/image";
 import GlassCard from "@/components/ui/glass-card";
+import { cn } from "@/lib/utils";
+import Image from "next/image";
+import React, { useEffect, useState } from "react";
 
 export const InfiniteMovingCards = ({
   items,
@@ -13,9 +13,9 @@ export const InfiniteMovingCards = ({
   className,
 }: {
   items: {
-    title: string;
     src: string;
     color: string;
+    title: string;
   }[];
   direction?: "left" | "right";
   speed?: "fast" | "normal" | "slow";
@@ -27,7 +27,7 @@ export const InfiniteMovingCards = ({
 
   const [start, setStart] = useState(false);
 
-  const getDirection = useCallback(() => {
+  const getDirection = () => {
     if (containerRef.current) {
       if (direction === "left") {
         containerRef.current.style.setProperty(
@@ -41,9 +41,8 @@ export const InfiniteMovingCards = ({
         );
       }
     }
-  }, [direction]);
-
-  const getSpeed = useCallback(() => {
+  };
+  const getSpeed = () => {
     if (containerRef.current) {
       if (speed === "fast") {
         containerRef.current.style.setProperty("--animation-duration", "20s");
@@ -53,18 +52,10 @@ export const InfiniteMovingCards = ({
         containerRef.current.style.setProperty("--animation-duration", "80s");
       }
     }
-  }, [speed]);
-
-  const addAnimation = React.useCallback(() => {
+  };
+  function addAnimation() {
     if (containerRef.current && scrollerRef.current) {
       const scrollerContent = Array.from(scrollerRef.current.children);
-
-      scrollerContent.forEach((item) => {
-        const duplicatedItem = item.cloneNode(true);
-        if (scrollerRef.current) {
-          scrollerRef.current.appendChild(duplicatedItem);
-        }
-      });
 
       scrollerContent.forEach((item) => {
         const duplicatedItem = item.cloneNode(true);
@@ -77,7 +68,7 @@ export const InfiniteMovingCards = ({
       getSpeed();
       setStart(true);
     }
-  }, [getDirection, getSpeed]);
+  }
 
   useEffect(() => {
     addAnimation();
@@ -87,26 +78,25 @@ export const InfiniteMovingCards = ({
   return (
     <div
       ref={containerRef}
-      className={cn("scroller relative z-20 overflow-hidden", className)}
+      className={cn(
+        "scroller relative z-20 max-w-7xl overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]",
+        className
+      )}
     >
       <ul
         ref={scrollerRef}
         className={cn(
-          "max-w-7xl flex min-w-full gap-4 justify-center items-center w-max flex-nowrap",
-          start && "animate-scroll",
+          "flex min-w-full shrink-0 gap-4 w-max flex-nowrap",
+          start && "animate-scroll ",
           pauseOnHover && "hover:[animation-play-state:paused]"
         )}
       >
         {items.map((item) => (
-          <div
-            key={item.title}
-            style={{
-              minWidth: "11rem",
-            }}
-          >
+          <li className="w-44 relative flex-shrink-0" key={item.title}>
             <GlassCard
+              key={item.title}
               className={cn(
-                "p-2 h-full flex min-w-4 flex-row gap-2 justify-center items-center border border-base-300 text-slate-900 dark:text-slate-300",
+                "p-2 h-full w-44 flex flex-row gap-2 justify-center items-center border border-base-300 text-slate-900 dark:text-slate-300",
                 item.color
               )}
             >
@@ -121,7 +111,7 @@ export const InfiniteMovingCards = ({
                 {item.title}
               </span>
             </GlassCard>
-          </div>
+          </li>
         ))}
       </ul>
     </div>
