@@ -47,7 +47,7 @@ export const InfiniteMovingCards = ({
       if (speed === "fast") {
         containerRef.current.style.setProperty("--animation-duration", "50s");
       } else if (speed === "normal") {
-        containerRef.current.style.setProperty("--animation-duration", "150s");
+        containerRef.current.style.setProperty("--animation-duration", "200s");
       } else {
         containerRef.current.style.setProperty("--animation-duration", "300s");
       }
@@ -120,7 +120,9 @@ export const InfiniteMovingCards = ({
 };
 
 export function SkillCards() {
-  return <InfiniteMovingCards items={skills} direction="right" speed="slow" />;
+  return (
+    <InfiniteMovingCards items={skills} direction="right" speed="normal" />
+  );
 }
 
 const skills = [
