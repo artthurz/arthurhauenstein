@@ -5,6 +5,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { wrap } from "popmotion";
 import { cn } from "@/lib/utils";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const variants = {
   enter: (direction: number) => {
@@ -95,16 +96,16 @@ export const Carousel = ({
         />
       </AnimatePresence>
       <div
-        className="btn btn-circle bg-base-300 absolute z-10 select-none -right-5"
+        className="btn btn-circle bg-base-100 absolute z-10 select-none -right-5"
         onClick={() => paginate(1)}
       >
-        {"‣"}
+        <ChevronRight className="size-4" />
       </div>
       <div
-        className="btn btn-circle bg-base-300 absolute z-10 select-none -left-5 scale-[-1]"
+        className="btn btn-circle bg-base-100 absolute z-10 select-none -left-5"
         onClick={() => paginate(-1)}
       >
-        {"‣"}
+        <ChevronLeft className="size-4" />
       </div>
     </div>
   );
