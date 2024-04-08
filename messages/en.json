@@ -1,5 +1,11 @@
 {
   "root": {
+    "navbar": {
+      "skills": "Skills",
+      "graduation": "Graduation",
+      "courses": "Courses",
+      "contact": "Contact"
+    },
     "welcome": {
       "title": {
         "1": "Hi, I`m Arthur, a",
@@ -14,6 +20,18 @@
         "5": ", providing",
         "6": "unique experiences",
         "7": "for people."
+      },
+      "highlights": {
+        "softwareEngineer": "Software Engineer",
+        "since2021": "↗︎ since 2021",
+        "graduated": "Graduated",
+        "at2021": "at 2021",
+        "experience": "Years of expirience",
+        "evolving": "↗︎ evolving everyday"
+      },
+      "quote": {
+        "message": "“For the past 8 years, as a software engineer, I have worked with large companies to help them reach their full potential and attract new customers through technology.”",
+        "softwareEngineer": "Software Engineer"
       }
     },
     "skills": {}

@@ -1,29 +1,32 @@
 "use server";
 
 import { Link } from "@/navigation";
+import { useTranslations } from "next-intl";
 
 export async function Nav() {
+  const t = useTranslations("root.navbar");
+
   return (
     <nav>
       <ul className="hidden md:flex items-center gap-x-8">
         <li>
           <Link className="hover:text-accent" href="#skills">
-            Competências
+            {t("skills")}
           </Link>
         </li>
         <li>
           <Link className="hover:text-accent" href="#academic">
-            Formação
+            {t("graduation")}
           </Link>
         </li>
         <li>
           <Link className="hover:text-accent" href="#courses">
-            Cursos
+            {t("courses")}
           </Link>
         </li>
         <li>
           <Link className="hover:text-accent" href="#contact">
-            Contato
+            {t("contact")}
           </Link>
         </li>
       </ul>

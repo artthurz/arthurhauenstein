@@ -1,5 +1,11 @@
 {
   "root": {
+    "navbar": {
+      "skills": "Competências",
+      "graduation": "Formação",
+      "courses": "Cursos",
+      "contact": "Contato"
+    },
     "welcome": {
       "title": {
         "1": "Olá, sou o Arthur, um",
@@ -14,6 +20,18 @@
         "5": ", proporcionando",
         "6": "experiências únicas",
         "7": "para as pessoas."
+      },
+      "highlights": {
+        "softwareEngineer": "Engenheiro de Software",
+        "since2021": "↗︎ desde 2021",
+        "graduated": "Graduado",
+        "at2021": "em 2021",
+        "experience": "Anos de experiência",
+        "evolving": "↗︎ evoluindo todos os dias"
+      },
+      "quote": {
+        "message": "“Nos últimos 8 anos, como engenheiro de software, trabalhei com grandes empresas para ajudá-las a alcançar todo o seu potencial e atrair novos clientes por meio da tecnologia.”",
+        "softwareEngineer": "Engenheiro de Software"
       }
     },
     "skills": {}

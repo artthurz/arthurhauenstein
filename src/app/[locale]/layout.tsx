@@ -55,7 +55,7 @@ export default function RootLayout({
   params: { locale: string };
 }>) {
   return (
-    <html lang={locale}>
+    <html lang={locale} suppressHydrationWarning>
       <body className={cn(poppins.className, "bg-slate-50 dark:bg-[#0B1120]")}>
         <Providers locale={locale}>
           <Header />

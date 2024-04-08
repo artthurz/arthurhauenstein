@@ -8,6 +8,7 @@ import {
   FormMessage,
   Form as Formulary,
 } from "@/components/ui/form";
+import GlassCard from "@/components/ui/glass-card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -80,69 +81,73 @@ export default function Form() {
   );
 
   return (
-    <Formulary {...form}>
-      <form
-        onSubmit={form.handleSubmit(handleSubmit)}
-        className="flex flex-col md:w-3/5 gap-4"
-      >
-        <FormField
-          control={form.control}
-          name="name"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Nome</FormLabel>
-              <FormControl>
-                <Input
-                  datatype="name"
-                  type="text"
-                  placeholder="Qual o seu nome?"
-                  {...field}
-                />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
-          name="email"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Email</FormLabel>
-              <FormControl>
-                <Input
-                  datatype="email"
-                  type="email"
-                  placeholder="Qual o seu email?"
-                  {...field}
-                />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
-          name="message"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Como posso te ajudar?</FormLabel>
-              <FormControl>
-                <Textarea placeholder="Escreva a sua mensagem..." {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <button
-          className="btn flex gap-2 dark:bg-blue-500 dark:hover:bg-blue-400 bg-blue-400 hover:bg-blue-300 text-white"
-          type="submit"
-          disabled={isLoading}
+    <GlassCard>
+      <Formulary {...form}>
+        <form
+          onSubmit={form.handleSubmit(handleSubmit)}
+          className="flex flex-col w-full p-6 gap-4"
         >
-          {isLoading && <div className="loading" />}
-          Enviar mensagem
-        </button>
-      </form>
-    </Formulary>
+          <div className="flex flex-col md:flex-row gap-4 w-full">
+            <FormField
+              control={form.control}
+              name="name"
+              render={({ field }) => (
+                <FormItem className="w-full">
+                  <FormLabel>Name</FormLabel>
+                  <FormControl>
+                    <Input
+                      datatype="name"
+                      type="text"
+                      placeholder="Your name"
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="email"
+              render={({ field }) => (
+                <FormItem className="w-full">
+                  <FormLabel>Email</FormLabel>
+                  <FormControl>
+                    <Input
+                      datatype="email"
+                      type="email"
+                      placeholder="Email address"
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
+          <FormField
+            control={form.control}
+            name="message"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>How can I help you??</FormLabel>
+                <FormControl>
+                  <Textarea placeholder="Enter your message..." {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <button
+            className="btn flex gap-2 dark:bg-blue-500 dark:hover:bg-blue-400 bg-blue-400 hover:bg-blue-300 text-white"
+            type="submit"
+            disabled={isLoading}
+          >
+            {isLoading && <div className="loading" />}
+            Enviar mensagem
+          </button>
+        </form>
+      </Formulary>
+    </GlassCard>
   );
 }

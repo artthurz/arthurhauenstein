@@ -1,3 +1,5 @@
+"use client";
+
 import { Highlight } from "@/components/ui/highlight";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
@@ -44,7 +46,7 @@ export default function Hero() {
         </p>
       </div>
       <Image
-        className="w-96 h-auto md:w-72 lg:w-96 md:h-auto select-none object-cover md:object-contain rounded-3xl mx-auto"
+        className="w-96 md:w-72 lg:w-96 h-auto select-none object-cover md:object-contain rounded-3xl mx-auto"
         alt="Arthur"
         src={ArthurPhoto}
         loading="lazy"
