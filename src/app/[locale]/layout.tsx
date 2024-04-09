@@ -6,6 +6,8 @@ import React from "react";
 import "./globals.css";
 import Providers from "./providers";
 import { cn } from "@/lib/utils";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/react";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -63,6 +65,8 @@ export default function RootLayout({
           <Footer />
         </Providers>
       </body>
+      <SpeedInsights />
+      <Analytics />
     </html>
   );
 }
