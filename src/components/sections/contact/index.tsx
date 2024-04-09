@@ -1,6 +1,14 @@
-import Form from "./form";
+"use client";
+
+import { useTranslations } from "next-intl";
+import { Form } from "./form";
+import { Highlight } from "@/components/ui/highlight";
+import { motion } from "framer-motion";
+import Title from "./title";
 
 export function ContactSection() {
+  const t = useTranslations("root.contact");
+
   return (
     <section id="contact" className="mt-12 md:mt-0">
       <div className="mb-12 max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
@@ -8,15 +16,9 @@ export function ContactSection() {
           <div className="h-full w-full aspect-w-1 aspect-h-1 bg-[length:100%] bg-[url('/images/section/contact-light.png')] dark:bg-[url('/images/section/contact-dark.png')]" />
         </div>
         <h2 className="mt-8 font-semibold text-blue-500 dark:text-blue-400">
-          Entre em contato
+          {t("section")}
         </h2>
-        <p className="mt-4 text-3xl sm:text-4xl text-primary font-extrabold tracking-tight">
-          Precisando de um desenvolvedor? Vamos trabalhar juntos.
-        </p>
-        <p className="mt-4 max-w-3xl space-y-6">
-          Utilize o formulário ou as redes abaixos para me contatar, estou a
-          disposição para responder suas dúvidas.
-        </p>
+        <Title />
       </div>
       <div className="relative pt-10 xl:pt-0 mt-10 xl:mt-2">
         <div className="hidden dark:block absolute inset-x-0 h-[8rem] bg-gradient-to-b from-[#0c1120] top-0 xl:top-16" />

@@ -3,10 +3,13 @@
 import { Carousel } from "@/components/ui/carousel";
 import GlassCard from "@/components/ui/glass-card";
 import { ChevronRight, Star } from "lucide-react";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 
 export async function University() {
+  const t = useTranslations("root.academic.university");
+
   return (
     <GlassCard>
       <Carousel
@@ -25,7 +28,7 @@ export async function University() {
             Univates
           </h1>
           <p className="text-sm leading-4 font-medium text-slate-500 dark:text-slate-400">
-            Universidade do Vale do Taquari
+            {t("name")}
           </p>
         </div>
         <div className="hidden md:grid gap-4 col-start-1 col-end-3 row-start-1 sm:mb-6 sm:grid-cols-4 lg:gap-6 lg:col-start-2 lg:row-end-6 lg:row-span-6 lg:mb-0">
@@ -59,7 +62,10 @@ export async function University() {
           <dd className="text-indigo-600 flex items-center dark:text-indigo-400">
             <Star className="h-4 w-4 mr-1 text-indigo-400" />
             <span className="font-bold">
-              4 <span className="text-slate-400 font-normal">(Nota MEC)</span>
+              4{" "}
+              <span className="text-slate-400 font-normal">
+                ({t("rating")})
+              </span>
             </span>
           </dd>
           <dt className="sr-only">Location</dt>
@@ -98,19 +104,12 @@ export async function University() {
             target="_blank"
             rel="noreferrer"
           >
-            Acessar univates.br
+            {t("button")}
             <ChevronRight className="h-4 w-4" />
           </Link>
         </div>
         <p className="mt-4 text-sm leading-6 col-start-1 sm:col-span-2 lg:mt-6 lg:row-start-4 lg:col-span-1">
-          Fundada em <b>1969</b> a Universidade do Vale do Taquari é{" "}
-          <b>referência</b> em ensino. Para comportar seus mais de{" "}
-          <b>12 mil alunos</b>, o campus da Univates conta com{" "}
-          <b>moderna estrutura</b> de laboratórios e ambientes especiais
-          equipados com recursos tecnológicos, que permitem aos estudantes
-          inúmeras experiências práticas de aprendizagem. São mais de{" "}
-          <b>200 laboratórios</b>, museus e salas especiais à disposição dos
-          estudantes e professores.
+          {t("breefing")}
         </p>
       </div>
     </GlassCard>

@@ -12,36 +12,48 @@ import GlassCard from "@/components/ui/glass-card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useTranslations } from "next-intl";
 import React from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 import { z } from "zod";
 
-const formSchema = z.object({
-  name: z.string({
-    required_error: "Este campo é obrigatório.",
-  }),
-  email: z
-    .string({
-      required_error: "Este campo é obrigatório.",
-    })
-    .email({ message: "Insira um email válido." }),
-  message: z.string({
-    required_error: "Este campo é obrigatório.",
-  }),
-});
+const FormSchema = (t: (arg: string) => string) =>
+  z.object({
+    name: z
+      .string({
+        required_error: t("required"),
+      })
+      .min(1, {
+        message: t("required"),
+      }),
+    email: z
+      .string({
+        required_error: t("required"),
+      })
+      .email({ message: "Insira um email válido." }),
+    message: z
+      .string({
+        required_error: t("required"),
+      })
+      .min(1, {
+        message: t("required"),
+      }),
+  });
 
-export type TFormSchema = z.infer<typeof formSchema>;
+export function Form() {
+  const t = useTranslations("root.contact.form");
+  const formSchema = FormSchema(t);
+  type TFormSchema = z.infer<typeof formSchema>;
 
-export default function Form() {
   const [lastSentEmail, setLastSentEmail] = React.useState<TFormSchema>();
   const [isLoading, setIsLoading] = React.useState(false);
 
   const form = useForm<TFormSchema>({
-    resolver: zodResolver(formSchema),
+    resolver: zodResolver(formSchema, {}),
   });
 
-  async function sendEmail(data: TFormSchema) {
+  const sendEmail = React.useCallback(async (data: TFormSchema) => {
     const response = await fetch("/api/email", {
       method: "POST",
       body: JSON.stringify(data),
@@ -50,14 +62,14 @@ export default function Form() {
     if (!response.ok) {
       throw new Error(response.statusText);
     }
-  }
+  }, []);
 
   const handleSubmit = React.useCallback(
     async (data: TFormSchema) => {
       setIsLoading(true);
       if (JSON.stringify(data) === JSON.stringify(lastSentEmail)) {
-        toast.success("Contato recebido!", {
-          description: "Em breve retornarei o sua mensagem.",
+        toast.success(t("success.title"), {
+          description: t("success.description"),
         });
         setIsLoading(false);
         return;
@@ -66,18 +78,18 @@ export default function Form() {
       await sendEmail(data)
         .then(() => {
           setLastSentEmail(data);
-          toast.success("Contato recebido!", {
-            description: "Em breve retornarei o sua mensagem.",
+          toast.success(t("success.title"), {
+            description: t("success.description"),
           });
         })
         .catch(() =>
-          toast.error("Bug descoberto! 🐞", {
-            description: "Vou correr para arrumar esta funcionalidade.",
+          toast.error(t("error.title"), {
+            description: t("error.description"),
           })
         )
         .finally(() => setIsLoading(false));
     },
-    [lastSentEmail]
+    [lastSentEmail, sendEmail, t]
   );
 
   return (
@@ -93,12 +105,12 @@ export default function Form() {
               name="name"
               render={({ field }) => (
                 <FormItem className="w-full">
-                  <FormLabel>Name</FormLabel>
+                  <FormLabel>{t("name.label")}</FormLabel>
                   <FormControl>
                     <Input
                       datatype="name"
                       type="text"
-                      placeholder="Your name"
+                      placeholder={t("name.placeholder")}
                       {...field}
                     />
                   </FormControl>
@@ -111,12 +123,12 @@ export default function Form() {
               name="email"
               render={({ field }) => (
                 <FormItem className="w-full">
-                  <FormLabel>Email</FormLabel>
+                  <FormLabel>{t("email.label")}</FormLabel>
                   <FormControl>
                     <Input
                       datatype="email"
                       type="email"
-                      placeholder="Email address"
+                      placeholder={t("email.placeholder")}
                       {...field}
                     />
                   </FormControl>
@@ -130,9 +142,9 @@ export default function Form() {
             name="message"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>How can I help you??</FormLabel>
+                <FormLabel>{t("message.label")}</FormLabel>
                 <FormControl>
-                  <Textarea placeholder="Enter your message..." {...field} />
+                  <Textarea placeholder={t("message.placeholder")} {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -144,7 +156,7 @@ export default function Form() {
             disabled={isLoading}
           >
             {isLoading && <div className="loading" />}
-            Enviar mensagem
+            {t("submit")}
           </button>
         </form>
       </Formulary>

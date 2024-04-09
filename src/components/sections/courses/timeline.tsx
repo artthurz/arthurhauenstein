@@ -4,6 +4,8 @@ import { cn } from "@/lib/utils";
 import { ExternalLink } from "lucide-react";
 import Link from "next/link";
 import React from "react";
+import { CourseProps } from "./content";
+import { useTranslations } from "next-intl";
 
 interface LineProps {
   children: React.ReactNode;
@@ -17,21 +19,14 @@ export async function Line(props: LineProps) {
   );
 }
 
-interface MarkProps {
+interface MarkProps extends CourseProps {
   lastIndex: number;
   index: number;
-  name: string;
-  institution: string;
-  date: string;
-  description: string;
-  link: string;
   children?: React.ReactNode;
-  background: string;
-  textColor: string;
-  fillColor: string;
 }
 
 export async function Mark(props: MarkProps) {
+  const t = useTranslations("root.courses");
   return (
     <li>
       <hr
@@ -63,15 +58,15 @@ export async function Mark(props: MarkProps) {
           props.index % 2 === 0 ? "md:text-end" : "md:timeline-end"
         )}
       >
-        <time className="font-mono italic">{props.date}</time>
+        <time className="font-mono italic">{t(`list.${props.code}.date`)}</time>
         <div
           className={cn(
             "flex items-center gap-2 text-lg font-bold text-primary",
             props.index % 2 === 0 ? "md:flex-row-reverse" : ""
           )}
         >
-          {props.name} - {props.institution}
-          <div className="tooltip" data-tip="Acessar site">
+          {t(`list.${props.code}.name`)} - {t(`list.${props.code}.institution`)}
+          <div className="tooltip" data-tip={t("tooltip")}>
             <Link
               className="btn btn-circle btn-ghost"
               href={props.link}
@@ -82,7 +77,7 @@ export async function Mark(props: MarkProps) {
             </Link>
           </div>
         </div>
-        {props.description}
+        {t(`list.${props.code}.description`)}
       </div>
       <hr
         className={cn(

@@ -6,8 +6,10 @@ import React from "react";
 import { LocaleSelector } from "./locale-selector";
 import { createPortal } from "react-dom";
 import { useMounted } from "@/hooks/use-mounted";
+import { useTranslations } from "next-intl";
 
 export function Menu() {
+  const t = useTranslations("root.menu");
   const dialogRef = React.useRef<HTMLDialogElement>(null);
   const mounted = useMounted();
   const isDesktop = useMediaQuery("(min-width: 768px)");
@@ -44,7 +46,7 @@ export function Menu() {
                     href="#skills"
                     onClick={() => dialogRef.current?.close()}
                   >
-                    Competências
+                    {t("skills")}
                   </a>
                 </span>
               </li>
@@ -55,7 +57,7 @@ export function Menu() {
                     href="#academic"
                     onClick={() => dialogRef.current?.close()}
                   >
-                    Formação
+                    {t("graduation")}
                   </a>
                 </span>
               </li>
@@ -65,7 +67,7 @@ export function Menu() {
                   href="#courses"
                   onClick={() => dialogRef.current?.close()}
                 >
-                  Cursos
+                  {t("courses")}
                 </a>
               </li>
               <li>
@@ -74,7 +76,7 @@ export function Menu() {
                   href="#contact"
                   onClick={() => dialogRef.current?.close()}
                 >
-                  Contato
+                  {t("contact")}
                 </a>
               </li>
             </ul>

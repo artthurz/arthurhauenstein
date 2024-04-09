@@ -1,10 +1,11 @@
 {
   "root": {
-    "navbar": {
+    "menu": {
       "skills": "Skills",
       "graduation": "Graduation",
       "courses": "Courses",
-      "contact": "Contact"
+      "contact": "Contact",
+      "changeLanguage": "Change language"
     },
     "welcome": {
       "title": {
@@ -34,6 +35,114 @@
         "softwareEngineer": "Software Engineer"
       }
     },
-    "skills": {}
+    "skills": {
+      "section": "Skills",
+      "title": "Technologies to build the future.",
+      "subtitle": {
+        "1": "As I am a technology enthusiast, I am always attentive to market movements, therefore I study and validate emerging technologies that can add to the work.",
+        "2": "I seek to work need-oriented, choosing the best technology to meet each project I work on."
+      }
+    },
+    "academic": {
+      "section": "Graduation",
+      "title": "Systems Analysis and Development.",
+      "subtitle": {
+        "1": "Graduation was a great facilitator in opening my eyes to opportunities in the world of technology and making better decisions regarding my career.",
+        "2": "I started studying at Univates at",
+        "3": "and I graduated at"
+      },
+      "university": {
+        "name": "University of Taquari Valley",
+        "rating": "Nota MEC",
+        "button": "Accesss univates.br",
+        "breefing": "Founded in 1969, the University of Taquari Valley is a reference in teaching. To accommodate its more than 12 thousand students, the Univates campus has a modern structure of laboratories and special environments equipped with technological resources, which allow students countless practical learning experiences. There are more than 200 laboratories, museums and special rooms available to students and teachers."
+      }
+    },
+    "courses": {
+      "section": "Professional development",
+      "title": "Technical courses taken.",
+      "subtitle": "To delve deeper into the technologies I work with, I look for the best courses available on the market, ensuring solid knowledge from the basis of a programming language or framework.",
+      "list": {
+        "netDeveloperCareer": {
+          "name": ".NET Developer Career",
+          "institution": "Balta",
+          "description": "Development and backend architecture in C# and .NET by 11x Microsoft MVP André Baltieri.",
+          "date": "10/2023"
+        },
+        "uxUnicorn": {
+          "name": "UX Unicórnio",
+          "institution": "by Leandro Rezende",
+          "description": "Formation in UI/UX Design from scratch to professional level of User Experience Design.",
+          "date": "04/2023"
+        },
+        "nestjs": {
+          "name": "NestJS",
+          "institution": "by Ariel Weinberger",
+          "description": "Modern backend development with a focus on NestJS.",
+          "date": "09/2021"
+        },
+        "formationInReactNative": {
+          "name": "React Native",
+          "institution": "Rocketseat",
+          "description": "Complete course in React Native. Used several important tools like TypeScript, Expo, Styled Components, Async Storage, Social Authentication, Animations, Context API, Hooks, Jest, and many others.",
+          "date": "04/2021"
+        },
+        "formationInReact": {
+          "name": "React",
+          "institution": "Rocketseat",
+          "description": "Complete course in React.JS. Used several important tools like TypeScript, Next.JS, Styled Components, SASS, Context API, Hooks, Jest, and many others.",
+          "date": "04/2021"
+        },
+        "formationInNode": {
+          "name": "Node",
+          "institution": "Rocketseat",
+          "description": "Complete course in Node.JS. Used several important tools like TypeScript, Rest, SOLID, Docker, TypeORM, JWT, bcrypt, Jest, and many others.",
+          "date": "04/2021"
+        },
+        "fullStackBootcamp": {
+          "name": "Bootcamp Full Stack",
+          "institution": "Rocketseat",
+          "description": "Intensive 6-month bootcamp focusing on React.JS, React Native, and Node.JS from scratch to deployment. Including automated tests, continuous integration, publication in stores, and all important libraries and frameworks.",
+          "date": "10/2019"
+        }
+      },
+      "tooltip": "Go to website"
+    },
+    "contact": {
+      "section": "Get in touch",
+      "title": {
+        "1": "Need a developer?",
+        "2": "Let's work together."
+      },
+      "subtitle": "Use the form or networks below to contact me, I'm happy to answer your questions.",
+      "form": {
+        "name": {
+          "label": "Name",
+          "placeholder": "Your name"
+        },
+        "email": {
+          "label": "Email",
+          "placeholder": "Your email address"
+        },
+        "message": {
+          "label": "How can I help you?",
+          "placeholder": "Insert your message..."
+        },
+        "required": "This field is required.",
+        "success": {
+          "title": "Contact received!",
+          "description": "I will return your message shortly."
+        },
+        "error": {
+          "title": "Bug discovered! 🐞",
+          "description": "I'm going to rush to fix this feature."
+        },
+        "submit": "Send message"
+      }
+    },
+    "footer": {
+      "message": "Providing reliable tech since 2016",
+      "madeWith": "Made with"
+    }
   }
 }

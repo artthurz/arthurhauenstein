@@ -2,18 +2,20 @@
 
 import LogoIcon from "@/assets/LogoIcon";
 import { Heart } from "lucide-react";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 
 export async function Footer() {
+  const t = useTranslations("root.footer");
   return (
     <footer className="bg-base-100 pb-16 text-sm px-4 sm:px-6 md:px-8">
       <div className="footer max-md:footer-center pt-10 max-w-7xl mx-auto border-t border-t-slate-200 dark:border-t-slate-700">
         <aside>
           <LogoIcon className="w-auto h-5" />
-          <p className="font-bold">Providing reliable tech since 2016</p>
-          <div className="flex gap-1">
-            <span>Made with</span>
+          <p className="font-semibold opacity-60">{t("message")}</p>
+          <div className="flex gap-1 opacity-60">
+            <span>{t("madeWith")}</span>
             <Heart className="size-4 fill-current" />
           </div>
         </aside>

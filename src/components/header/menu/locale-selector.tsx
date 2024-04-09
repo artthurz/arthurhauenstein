@@ -1,6 +1,6 @@
 "use client";
 import { TLocales, localeLabel, locales, useRouter } from "@/navigation";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import React from "react";
 
 type LocaleSelctorProps = {
@@ -8,6 +8,7 @@ type LocaleSelctorProps = {
 };
 
 export function LocaleSelector({ onSelect }: LocaleSelctorProps) {
+  const t = useTranslations("root.menu");
   const locale = useLocale();
   const { replace } = useRouter();
 
@@ -25,7 +26,7 @@ export function LocaleSelector({ onSelect }: LocaleSelctorProps) {
     <div className="mt-6 pt-6 border-t border-slate-200 dark:border-slate-200/10">
       <div className="flex items-center justify-between">
         <label htmlFor="language" className="font-normal">
-          Mudar idioma
+          {t("changeLanguage")}
         </label>
         <div className="relative flex items-center ring-1 ring-slate-900/10 rounded-lg shadow-sm p-2 text-slate-700 font-semibold dark:bg-slate-600 dark:ring-0 dark:text-slate-200 dark:shadow-white/5">
           {localeLabel[locale as TLocales]}

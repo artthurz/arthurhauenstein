@@ -1,7 +1,12 @@
+"use server";
+
 import React from "react";
 import { Content } from "./content";
+import { useTranslations } from "next-intl";
 
-export function CoursesSection() {
+export async function CoursesSection() {
+  const t = useTranslations("root.courses");
+
   return (
     <section id="courses">
       <div className="mb-6 max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
@@ -9,16 +14,12 @@ export function CoursesSection() {
           <div className="w-full h-full aspect-w-1 aspect-h-1 bg-[length:100%] bg-[url('/images/section/courses-light.png')] dark:bg-[url('/images/section/courses-dark.png')]" />
         </div>
         <h2 className="mt-8 font-semibold text-sky-500 dark:text-sky-400">
-          Desenvolvimento profissional
+          {t("section")}
         </h2>
         <p className="mt-4 text-3xl sm:text-4xl text-primary font-extrabold tracking-tight">
-          Cursos técnicos relizados.
+          {t("title")}
         </p>
-        <p className="mt-4 max-w-3xl space-y-6">
-          Para me aprofundar nas técnologias com que trabalho busco os melhores
-          cursos disponíveis no mercado, zelando por conhecimentos sólidos desde
-          a base de uma linguagem de programação ou framekwork.
-        </p>
+        <p className="mt-4 max-w-3xl space-y-6">{t("subtitle")}</p>
       </div>
       <div className="relative pt-10 xl:pt-0 mt-10 xl:mt-2">
         <div className="hidden dark:block absolute inset-x-0 h-[37.5rem] bg-gradient-to-b from-[#0c1120] top-0 xl:top-8" />

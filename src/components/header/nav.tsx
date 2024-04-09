@@ -4,7 +4,7 @@ import { Link } from "@/navigation";
 import { useTranslations } from "next-intl";
 
 export async function Nav() {
-  const t = useTranslations("root.navbar");
+  const t = useTranslations("root.menu");
 
   return (
     <nav>

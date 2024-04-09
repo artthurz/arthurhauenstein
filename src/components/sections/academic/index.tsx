@@ -1,7 +1,12 @@
+"use server";
+
 import React from "react";
 import { University } from "./university";
+import { useTranslations } from "next-intl";
 
-export function AcademicSection() {
+export async function AcademicSection() {
+  const t = useTranslations("root.academic");
+
   return (
     <section id="academic" className="z-10 mb-80 sm:mb-32 md:mb-6 lg:mb-0">
       <div className="mb-6 max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
@@ -9,19 +14,14 @@ export function AcademicSection() {
           <div className="h-full w-full aspect-w-1 aspect-h-1 bg-[length:100%] bg-[url('/images/section/academic-light.png')] dark:bg-[url('/images/section/academic-dark.png')]" />
         </div>
         <h2 className="mt-8 font-semibold text-indigo-500 dark:text-indigo-400">
-          Formação acadêmica
+          {t("section")}
         </h2>
         <p className="mt-4 text-3xl sm:text-4xl text-primary font-extrabold tracking-tight">
-          Análise e Desenvolvimento de Sistemas.
+          {t("title")}
         </p>
+        <p className="mt-4 max-w-3xl space-y-6">{t("subtitle.1")}</p>
         <p className="mt-4 max-w-3xl space-y-6">
-          A graduação foi um grande facilitador para abrir meus olhos para as
-          oportunidades no mundo da técnologia e a tomar melhores decisões
-          quanto a minha carreira. <br />
-        </p>
-        <p className="mt-4 max-w-3xl space-y-6">
-          Iniciei os estudos na Univates em <b>2016</b> e realizei minha
-          formatura em <b>2021</b> 🧑🏻‍🎓.
+          {t("subtitle.2")} <b>2016</b> {t("subtitle.3")} <b>2021</b> 🧑🏻‍🎓.
         </p>
       </div>
       <div className="relative pt-10 xl:pt-0 mt-10 xl:mt-2">

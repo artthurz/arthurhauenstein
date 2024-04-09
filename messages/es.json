@@ -1,10 +1,11 @@
 {
   "root": {
-    "navbar": {
+    "menu": {
       "skills": "Habilidades",
       "graduation": "Graduación",
       "courses": "Cursos",
-      "contact": "Contacto"
+      "contact": "Contacto",
+      "changeLanguage": "Cambiar idioma"
     },
     "welcome": {
       "title": {
@@ -34,6 +35,114 @@
         "softwareEngineer": "Ingeniero de Software"
       }
     },
-    "skills": {}
+    "skills": {
+      "section": "Habilidades",
+      "title": "Tecnologías para construir el futuro.",
+      "subtitle": {
+        "1": "Como soy un entusiasta de la tecnología, siempre estoy atento a los movimientos del mercado, por ello estudio y valido tecnologías emergentes que pueden sumar al trabajo.",
+        "2": "Busco trabajar orientado a las necesidades, eligiendo la mejor tecnología para afrontar cada proyecto en el que trabajo."
+      }
+    },
+    "academic": {
+      "section": "Formación académica",
+      "title": "Análisis y desarrollo de sistemas.",
+      "subtitle": {
+        "1": "La graduación fue un gran facilitador para abrirme los ojos a oportunidades en el mundo de la tecnología y tomar mejores decisiones con respecto a mi carrera.",
+        "2": "Empecé a estudiar en Univates en",
+        "3": "y me gradué en"
+      },
+      "university": {
+        "name": "Universidad de Vale do Taquari",
+        "rating": "Clasificación MEC",
+        "button": "Acceder a univates.br",
+        "breefing": "Fundada en 1969, la Universidad de Vale do Taquari es una referencia en docencia. Para albergar a sus más de 12 mil estudiantes, el campus Univates cuenta con una moderna estructura de laboratorios y ambientes especiales equipados con recursos tecnológicos, que permiten a los estudiantes innumerables experiencias prácticas de aprendizaje. Hay más de 200 laboratorios, museos y salas especiales a disposición de estudiantes y profesores."
+      }
+    },
+    "courses": {
+      "section": "Desarrollo profesional",
+      "title": "Cursos técnicos realizados.",
+      "subtitle": "Para profundizar en las tecnologías con las que trabajo, busco los mejores cursos disponibles en el mercado, asegurando conocimientos sólidos desde la base de un lenguaje o framework de programación.",
+      "list": {
+        "netDeveloperCareer": {
+          "name": "Carrera .NET Developer",
+          "institution": "Balta",
+          "description": "Desarrollo y arquitectura de backend en C# y .NET por 11x Microsoft MVP André Baltieri.",
+          "date": "10/2023"
+        },
+        "uxUnicorn": {
+          "name": "UX Unicórnio",
+          "institution": "por Leandro Rezende",
+          "description": "Formación en Diseño UI/UX desde cero hasta el nivel profesional de Diseño de Experiencia del Usuario.",
+          "date": "04/2023"
+        },
+        "nestjs": {
+          "name": "NestJS",
+          "institution": "por Ariel Weinberger",
+          "description": "Desarrollo moderno de backend con enfoque en NestJS.",
+          "date": "09/2021"
+        },
+        "formationInReactNative": {
+          "name": "Entrenamiento en React Native",
+          "institution": "Rocketseat",
+          "description": "Curso completo en React Native. Utilizadas varias herramientas importantes como TypeScript, Expo, Styled Components, Async Storage, Autenticación Social, Animaciones, Context API, Hooks, Jest y muchas otras.",
+          "date": "04/2021"
+        },
+        "formationInReact": {
+          "name": "Entrenamiento en React",
+          "institution": "Rocketseat",
+          "description": "Curso completo en React.JS. Utilizadas varias herramientas importantes como TypeScript, Next.JS, Styled Components, SASS, Context API, Hooks, Jest y muchas otras.",
+          "date": "04/2021"
+        },
+        "formationInNode": {
+          "name": "Entrenamiento en Node",
+          "institution": "Rocketseat",
+          "description": "Curso completo en Node.JS. Utilizadas varias herramientas importantes como TypeScript, Rest, SOLID, Docker, TypeORM, JWT, bcrypt, Jest y muchas otras.",
+          "date": "04/2021"
+        },
+        "fullStackBootcamp": {
+          "name": "Bootcamp Full Stack",
+          "institution": "Rocketseat",
+          "description": "Bootcamp intensivo de 6 meses enfocado en React.JS, React Native y Node.JS desde cero hasta el despliegue. Incluye pruebas automatizadas, integración continua, publicación en tiendas y todas las bibliotecas y frameworks importantes.",
+          "date": "10/2019"
+        }
+      },
+      "tooltip": "Ir al sitio web"
+    },
+    "contact": {
+      "section": "Ponte en contacto",
+      "title": {
+        "1": "¿Necesitas un desarrollador?",
+        "2": "Trabajemos juntos."
+      },
+      "subtitle": "Utiliza el formulario o las redes a continuación para contactarme, estaré encantado de responder tus preguntas.",
+      "form": {
+        "name": {
+          "label": "Nombre",
+          "placeholder": "Tu nombre"
+        },
+        "email": {
+          "label": "Email",
+          "placeholder": "Tu correo electrónico"
+        },
+        "message": {
+          "label": "¿Cómo puedo ayudarte?",
+          "placeholder": "Inserta tu mensaje..."
+        },
+        "required": "Este campo es obligatorio.",
+        "success": {
+          "title": "¡Contacto recibido!",
+          "description": "Te devolveré tu mensaje en breve."
+        },
+        "error": {
+          "title": "¡Error descubierto! 🐞",
+          "description": "Voy a apresurarme a arreglar esta característica."
+        },
+        "submit": "Enviar mensaje"
+      }
+    },
+    "footer": {
+      "message": "Proporcionando tecnología confiable desde 2016",
+      "madeWith": "Hecho con"
+    }
   }
 }

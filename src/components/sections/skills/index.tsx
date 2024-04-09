@@ -1,3 +1,5 @@
+"use server";
+
 import { useTranslations } from "next-intl";
 import { InfiniteMovingCards } from "./moving-cards";
 
@@ -43,7 +45,7 @@ const skills = [
   },
 ];
 
-export function SkillsSection() {
+export async function SkillsSection() {
   const t = useTranslations("root.skills");
 
   return (
@@ -53,21 +55,14 @@ export function SkillsSection() {
           <div className="h-full w-full aspect-w-1 aspect-h-1 bg-[length:100%] bg-[url('/images/section/skills-light.png')] dark:bg-[url('/images/section/skills-dark.png')]" />
         </div>
         <h2 className="mt-8 font-semibold text-pink-500 dark:text-pink-400">
-          Competências
+          {t("section")}
         </h2>
         <p className="mt-4 text-3xl sm:text-4xl text-primary font-extrabold tracking-tight">
-          Tecnologias para construir o futuro.
+          {t("title")}
         </p>
         <div className="mt-4 max-w-3xl space-y-6 ">
-          <p>
-            Como sou um entusiasta por técnologia estou sempre atento aos
-            movimentos do mercado, com isso estudo e valido técnologias
-            emergentes que podem agregar ao trabalho.
-          </p>
-          <p>
-            Busco trabalhar orientado a necessidade, escolhendo a melhor
-            técnologia para atender cada projeto em que trabalho.
-          </p>
+          <p>{t("subtitle.1")}</p>
+          <p>{t("subtitle.2")}</p>
         </div>
       </div>
       <div className="relative pt-10 xl:pt-0 mt-10 xl:mt-2">
